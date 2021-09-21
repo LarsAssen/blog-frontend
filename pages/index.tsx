@@ -2,8 +2,7 @@ import type { NextPage } from 'next'
 import styles from '../styles/Home.module.scss'
 import Link from 'next/link';
 
-const BLOG_URL = 'https://blog-lars-assen.herokuapp.com'
-const CONTENT_API_KEY = '997d1602e426ba171799dcae9f'
+const {BLOG_URL, CONTENT_API_KEY} = process.env;
 
 type Post = {
   title: string,
