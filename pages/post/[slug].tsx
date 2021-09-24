@@ -13,7 +13,7 @@ async function getPost(slug: string){
     return posts[0];
 }
 
-export const getStaticProps = async ({ params }) =>{
+export const getStaticProps = async ({ params }: any) =>{
     const post = await getPost(params.slug);
     return{
       props: {post}  
