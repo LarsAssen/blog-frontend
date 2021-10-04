@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link';
 import { useRouter } from 'next/dist/client/router';
-import styles from '../../styles/Home.module.scss'
+import styles from '../../styles/Layout.module.scss'
 const {BLOG_URL, CONTENT_API_KEY} = process.env;
 
 async function getPost(slug: string){
