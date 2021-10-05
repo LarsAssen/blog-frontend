@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import styles from '../styles/Layout.module.scss'
 import Link from 'next/link';
 import Head from 'next/head';
+import PostList from '../components/Post/PostList';
 const {BLOG_URL, CONTENT_API_KEY} = process.env;
 
 type Post = {
@@ -41,6 +42,7 @@ const Home:React.FC<{ posts: Post[]}> = (props) => {
           return <li className={styles.card} key={post.slug} ><Link href="/post/[slug]" as={`/post/${post.slug}`} ><a>{post.title}</a></Link></li>
         })}
       </ul>
+      <PostList posts={posts} />
     </div>
   )
 }
