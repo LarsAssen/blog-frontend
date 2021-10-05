@@ -36,12 +36,8 @@ const Home:React.FC<{ posts: Post[]}> = (props) => {
         <title>The Running Explorer</title>
         <meta name='keywords' content='ultra running, running, books, self development' />
       </Head>
+      
       <h1>Welcome</h1>
-      <ul>
-        {posts.map((post) => {
-          return <li className={styles.card} key={post.slug} ><Link href="/post/[slug]" as={`/post/${post.slug}`} ><a>{post.title}</a></Link></li>
-        })}
-      </ul>
       <PostList posts={posts} />
     </div>
   )
