@@ -1,29 +1,4 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: #57CC99;
-  text-decoration: none;
-}
-
-h1, h2, h3, h4{
-  color: #38A3A5;
-}
-
-p, li{
-  color: #707070;
-}
-
-* {
-  box-sizing: border-box;
-  max-width: 100%;
-}
-
-img{
-  height: auto;
-}
+@tailwind base;
+@tailwind components;
+// Add Tailwind's @apply styles here
+@tailwind utilities;

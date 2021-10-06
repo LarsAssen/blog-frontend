@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import styles from '../styles/Layout.module.scss'
 import Link from 'next/link';
 import Head from 'next/head';
 import PostList from '../components/Post/PostList';
@@ -31,7 +30,7 @@ const Home:React.FC<{ posts: Post[]}> = (props) => {
   const { posts } = props;
   
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>The Running Explorer</title>
         <meta name='keywords' content='ultra running, running, books, self development' />

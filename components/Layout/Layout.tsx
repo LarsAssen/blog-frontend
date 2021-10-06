@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../../styles/Layout.module.scss';
 import NavBar from '../navagation/NavBar';
 import Meta from '../Meta/Meta';
 const Layout: React.FC = ({children}) => {
@@ -7,8 +6,8 @@ const Layout: React.FC = ({children}) => {
         <div>
             <Meta />
             <NavBar />
-        <div className={styles.container}>
-            <main className={styles.main}>
+        <div>
+            <main>
                 {children}
             </main>
         </div>
