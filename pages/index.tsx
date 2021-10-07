@@ -35,8 +35,10 @@ const Home:React.FC<{ posts: Post[]}> = (props) => {
         <title>The Running Explorer</title>
         <meta name='keywords' content='ultra running, running, books, self development' />
       </Head>
-      
-      <h1>Welcome</h1>
+      <div
+      className="z-0 absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat">
+    </div>
+      <h1 className="text-2xl">Welcome</h1>
       <PostList posts={posts} />
     </div>
   )
