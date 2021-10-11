@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-const Meta:React.FC = ({title, keywords, description}) => {
+const Meta:React.FC<{title:string, keywords:string, description:string}> = ({title, keywords, description}) => {
     return (
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
