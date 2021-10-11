@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Link from 'next/link';
 import Head from 'next/head';
 import PostList from '../components/Post/PostList';
+import Header from '../components/Header/Header';
 const {BLOG_URL, CONTENT_API_KEY} = process.env;
 
 type Post = {
@@ -31,13 +32,7 @@ const Home:React.FC<{ posts: Post[]}> = (props) => {
   
   return (
     <div>
-      <Head>
-        <title>The Running Explorer</title>
-        <meta name='keywords' content='ultra running, running, books, self development' />
-      </Head>
-      <div
-      className="z-0 absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat">
-    </div>
+      <Header />
       <h1 className="text-2xl">Welcome</h1>
       <PostList posts={posts} />
     </div>
