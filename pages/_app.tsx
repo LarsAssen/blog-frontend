@@ -1,6 +1,7 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app';
 import Layout from '../components/Layout/Layout';
+<<<<<<< HEAD
 import App from "next/app"
 import Head from "next/head"
 import {createContext} from "react"
@@ -9,6 +10,9 @@ import {getStrapiMedia} from "../lib/media";
 
 export const GlobalContext = createContext({});
 
+=======
+import 'tailwindcss/tailwind.css';
+>>>>>>> e56db4914e5858f7c7858f79739e28c22338a86d
 
 function MyApp({ Component, pageProps }: AppProps) {
   const {global} = pageProps;

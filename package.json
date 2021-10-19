@@ -9,21 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "autoprefixer": "^10.3.7",
     "moment": "^2.29.1",
+=======
+>>>>>>> e56db4914e5858f7c7858f79739e28c22338a86d
     "next": "11.1.2",
-    "postcss": "^8.3.9",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+<<<<<<< HEAD
     "react-markdown": "^7.0.1",
     "react-moment": "^1.1.1",
     "sass": "^1.39.2",
     "tailwindcss": "^2.2.16"
+=======
+    "sass": "^1.39.2"
+>>>>>>> e56db4914e5858f7c7858f79739e28c22338a86d
   },
   "devDependencies": {
     "@types/react": "17.0.20",
+    "autoprefixer": "^10.3.7",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "postcss": "^8.3.9",
+    "tailwindcss": "^2.2.16",
     "typescript": "4.4.3"
   }
 }

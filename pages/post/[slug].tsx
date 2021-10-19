@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
 import { useRouter } from 'next/dist/client/router';
-import styles from '../../styles/Layout.module.scss'
 const {BLOG_URL, CONTENT_API_KEY} = process.env;
 
 async function getPost(slug: string){
@@ -43,7 +42,7 @@ const Post: React.FC<{post: Post}> = (props) => {
     }
 
     return (
-        <div className={styles.container}>
+        <div>
             <Link href="/"><a>Go back</a></Link>
             <h1>{post.title}</h1>
             <div dangerouslySetInnerHTML={{__html: post.html}}></div>
