@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import Link from 'next/link';
 import Head from 'next/head';
+import { fetchAPI } from 'lib/api';
 import PostList from '../components/Post/PostList';
 import Header from '../components/Header/Header';
 const {BLOG_URL, CONTENT_API_KEY} = process.env;
-
+import Layout from '../components/Layout/Layout';
 type Post = {
   title: string,
   slug: string
@@ -20,21 +21,26 @@ async function getPosts(){
 }
 
 
-export const getStaticProps = async ({ params }:any) =>{
-  const posts = await getPosts();
-  return{
-    props: {posts}  
-  }
+export async function getStaticProps(){
+  const [articles, categories, homepage] = await Promise.all([
+    fetchAPI("/articles?status=published"),
+    fetchAPI("/categories"),
+    fetchAPI("/homepage"),
+  ])
+  return {
+    props: {articles, categories, homepage},
+    revalidate: 1,
+  };
 }
 
-const Home:React.FC<{ posts: Post[]}> = (props) => {
-  const { posts } = props;
+const Home:React.FC<{articles:any, categories:any, homepage:any}> = ({articles, categories, homepage}) => {
   
   return (
     <div>
+      <Layout categories={categories}>
       <Header />
       <h1 className="text-2xl">Welcome</h1>
-      <PostList posts={posts} />
+      </Layout>
     </div>
   )
 }
