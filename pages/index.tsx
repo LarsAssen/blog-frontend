@@ -1,14 +1,22 @@
+import PostList from '@/components/Post/PostList';
 import { fetchAPI } from 'lib/api';
 import Header from '../components/Header/Header';
 import Layout from '../components/Layout/Layout';
+
+type ImageType ={
+  alternativeText: string,
+  name: string,
+}
+
 type Post = {
   title: string,
-  slug: string
+  slug: string,
+  image: ImageType
 }
 
 export async function getStaticProps(){
   const [articles, categories, homepage] = await Promise.all([
-    fetchAPI("/articles?status=published"),
+    fetchAPI("/articles"),
     fetchAPI("/categories"),
     fetchAPI("/homepage"),
   ])
@@ -18,12 +26,12 @@ export async function getStaticProps(){
   };
 }
 
-const Home:React.FC<{articles:any, categories:any, homepage:any}> = ({articles, categories, homepage}) => {
-  
+const Home:React.FC<{articles:Post[], categories:any, homepage:any}> = ({articles, categories, homepage}) => {
   return (
     <div>
       <Layout categories={categories}>
-      <h1 className="text-2xl">Welcome</h1>
+      <h1 className="text-2xl">{homepage.hero.title}</h1>
+      <PostList posts={articles}/>
       </Layout>
     </div>
   )

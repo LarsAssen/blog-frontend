@@ -6,12 +6,12 @@ type ImageType ={
     name: string,
 }
 
-const Images:React.FC<{image:ImageType}> = ({ image }) => {
+const Images:React.FC<{image:ImageType|null}> = ({ image }) => {
   const imageUrl = getStrapiMedia(image);
   return (
     <Image
       src={imageUrl}
-      alt={image.alternativeText || image.name}
+      alt=""
       width={500}
       height={300}
       layout="intrinsic"

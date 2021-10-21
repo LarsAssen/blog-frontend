@@ -53,7 +53,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }:any) {
   const posts = await fetchAPI(
-    `/articles?slug=${params.slug}&status=published`
+    `/articles?slug=${params.slug}`
   );
   const categories = await fetchAPI("/categories");
 
