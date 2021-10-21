@@ -3,9 +3,15 @@ import Head from 'next/head';
 import PostList from '../../components/Post/PostList';
 
 
+type ImageType ={
+    alternativeText: string,
+    name: string,
+}
+
 type Post = {
     title: string,
-    slug: string
+    slug: string,
+    image: ImageType
   }
 
 

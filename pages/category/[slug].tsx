@@ -4,7 +4,8 @@ import Layout from "../../components/Layout/Layout";
 
 type Category ={
     name:string,
-    articles:any
+    articles:any,
+    slug: string
 }
 
 const Category:React.FC<{category:Category, categories:any}> = ({ category, categories}) =>{
@@ -31,3 +32,18 @@ export async function getStaticProps({ params }:any) {
       revalidate: 1,
     };
   }
+
+  export async function getStaticPaths() {
+    const categories = await fetchAPI("/categories");
+  
+    return {
+      paths: categories.map((category:Category) => ({
+        params: {
+          slug: category.slug,
+        },
+      })),
+      fallback: false,
+    };
+  }
+
+  export default Category;
