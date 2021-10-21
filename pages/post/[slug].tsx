@@ -1,53 +1,66 @@
-import React from 'react'
-import Link from 'next/link';
-import { useRouter } from 'next/dist/client/router';
-const {BLOG_URL, CONTENT_API_KEY} = process.env;
+import ReactMarkdown from "react-markdown";
+import Moment from "react-moment";
+import { fetchAPI } from "../../lib/api";
+import Layout from "../../components/Layout/Layout";
+import Image from "../../components/Image/Image";
+import { getStrapiMedia } from "../../lib/media";
 
-async function getPost(slug: string){
-    const res = await fetch(`${BLOG_URL}/ghost/api/v3/content/posts/slug/${slug}?key=${CONTENT_API_KEY}&fields=title,slug,html`)
-    .then((res) => res.json())
-  
-    const posts = res.posts;
-    
-    return posts[0];
-}
-
-export const getStaticProps = async ({ params }: any) =>{
-    const post = await getPost(params.slug);
-    return{
-      props: {post}  
-    }
-  }
-
-  export const getStaticPaths = () => {
-    return {
-      paths: [],
-      fallback:true
-    }
-  }
 
   type Post = {
       title: string
-      html: string
+      content: any
       slug: string
+      image: string
+      published_at: any
   }
 
-const Post: React.FC<{post: Post}> = (props) => {
-
-    const { post } = props;
-    const router = useRouter()
-
-    if(router.isFallback){
-        return <h1>Loading..</h1>
-    }
+const Post: React.FC<{post: Post, categories:any}> = ({post, categories}) => {
+  const imageUrl = getStrapiMedia(post.image)
 
     return (
-        <div>
-            <Link href="/"><a>Go back</a></Link>
-            <h1>{post.title}</h1>
-            <div dangerouslySetInnerHTML={{__html: post.html}}></div>
+      <Layout categories={categories}>
+        <div data-src={imageUrl} data-srcset={imageUrl} data-uk-img>
+          <h1>{post.title}</h1>
         </div>
+        <div>
+          <div>
+            <ReactMarkdown>{post.content}</ReactMarkdown>
+            <div>
+              <div>
+                <p>By Lars Assen</p>
+                <p><Moment format="MMM Do YYYY">{post.published_at}</Moment></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </Layout>
     )
+}
+
+export async function getStaticPaths() {
+  const posts = await fetchAPI("/articles");
+
+  return {
+    paths: posts.map((post:Post) => ({
+      params: {
+        slug: post.slug,
+      },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }:any) {
+  const posts = await fetchAPI(
+    `/articles?slug=${params.slug}&status=published`
+  );
+  const categories = await fetchAPI("/categories");
+
+  return {
+    props: { post: posts[0], categories },
+    revalidate: 1,
+  };
 }
 
 export default Post;

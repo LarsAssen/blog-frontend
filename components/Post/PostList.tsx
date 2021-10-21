@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import PostItem from './PostItem';
 
 
@@ -13,7 +12,7 @@ const PostList: React.FC<{ posts: Post[]}> = ({posts}) => {
       <div className="container mx-auto">
         <div className="grid grid-cols-3 gap-4">
             {posts.map((post) => {
-          return <PostItem post={post} key={post.slug} />
+          return <PostItem post={post} key={`article__${post.slug}`} />
         })}
         </div>
         </div>
