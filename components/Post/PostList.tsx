@@ -14,7 +14,6 @@ type Post = {
 }
 
 const PostList: React.FC<{ posts: Post[]}> = ({posts}) => {
-    console.log(posts);
     return (
       <div className="container mx-auto">
         <div className="grid grid-cols-3 gap-4">
