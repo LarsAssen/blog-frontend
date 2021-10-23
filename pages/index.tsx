@@ -30,8 +30,8 @@ const Home:React.FC<{articles:Post[], categories:any, homepage:any}> = ({article
   return (
     <div>
       <Layout categories={categories}>
-      <h1 className="text-2xl">{homepage.hero.title}</h1>
-      <PostList posts={articles}/>
+        <Header />
+        <PostList posts={articles}/>
       </Layout>
     </div>
   )

@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head';
 import PostList from '../../components/Post/PostList';
 import { fetchAPI } from 'lib/api';
+import Layout from '@/components/Layout/Layout';
 
 
 type ImageType ={
@@ -28,12 +29,14 @@ type Post = {
   }
 
 
-const Blog: React.FC<{ articles: Post[], blog:any}> = ({articles, blog}) => {
+const Blog: React.FC<{ articles: Post[], blog:any, categories:any}> = ({articles, blog, categories}) => {
 
     return (
         <div>
-            <h1>{blog.name}</h1>
-            <PostList posts={articles} />
+            <Layout categories={categories}>
+                <h1>{blog.title}</h1>
+                <PostList posts={articles} />
+            </Layout>
         </div>
     )
 }
