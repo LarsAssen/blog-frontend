@@ -10,7 +10,8 @@ type ImageType ={
 type Post = {
     title: string,
     slug: string,
-    image: ImageType
+    image: ImageType,
+    description: string
   }
 
 const PostItem: React.FC<{ post: Post}> = ({post}) => {
@@ -22,8 +23,8 @@ const PostItem: React.FC<{ post: Post}> = ({post}) => {
                     <Images image={post.image} />
                 </div>
                 <div>
-                    <h2>{post.title}</h2>
-                    
+                    <h2 className="text-xl text-indigo-500">{post.title}</h2>
+                    <p className="text-gray-700">{post.description}</p>
                 </div>
             </div>
             </a>

@@ -10,7 +10,8 @@ type ImageType ={
 type Post = {
   title: string,
   slug: string,
-  image: ImageType
+  image: ImageType,
+  description: string
 }
 
 const PostList: React.FC<{ posts: Post[]}> = ({posts}) => {

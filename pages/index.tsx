@@ -11,7 +11,8 @@ type ImageType ={
 type Post = {
   title: string,
   slug: string,
-  image: ImageType
+  image: ImageType,
+  description: string
 }
 
 export async function getStaticProps(){
@@ -31,6 +32,7 @@ const Home:React.FC<{articles:Post[], categories:any, homepage:any}> = ({article
     <div>
       <Layout categories={categories}>
         <Header />
+        <h2 className="text-3xl text-indigo-500">Latest posts</h2>
         <PostList posts={articles}/>
       </Layout>
     </div>

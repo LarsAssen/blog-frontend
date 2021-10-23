@@ -1,6 +1,6 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app';
-import Layout from '../components/Layout/Layout';
+import Footer from '@/components/Footer/Footer';
 import App from "next/app"
 import Head from "next/head"
 import {createContext} from "react"
@@ -19,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   </Head>
   <GlobalContext.Provider value={global}>
       <Component {...pageProps} />
+      <Footer />
   </GlobalContext.Provider>
   </> 
 )}
