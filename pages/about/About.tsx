@@ -4,6 +4,11 @@ const About: React.FC = () => {
     return (
         <div>
             <h1>About me</h1>
+            <p>Hi everyone, my name is Lars, and Im a software engineering student.
+                Next to writing code, I enjoy finding ways to improve my mental and physical health,
+                go on adventures, run, read and write. Im currently 22 years old and I live in the Netherlands.
+                I also play a bit of guitar, and sketch in my free time.
+            </p>
         </div>
     )
 }

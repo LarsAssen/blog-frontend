@@ -21,7 +21,7 @@ const Post: React.FC<{post: Post, categories:any}> = ({post, categories}) => {
       <Layout categories={categories}>
         <div data-src={imageUrl} data-src-set={imageUrl} data-uk-img>
           <h1>{post.title}</h1>
-          <img src={imageUrl} />
+          <img src={imageUrl} alt="" />
         </div>
         <div>
           <div>
