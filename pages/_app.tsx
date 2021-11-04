@@ -6,6 +6,7 @@ import Head from "next/head"
 import {createContext} from "react"
 import {fetchAPI} from "../lib/api";
 import {getStrapiMedia} from "../lib/media";
+import Layout from '@/components/Layout/Layout';
 
 export const GlobalContext = createContext({});
 
@@ -18,8 +19,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
   </Head>
   <GlobalContext.Provider value={global}>
-      <Component {...pageProps} />
-      <Footer />
+    <Layout>
+    <Component {...pageProps} />
+    </Layout>
   </GlobalContext.Provider>
   </> 
 )}
