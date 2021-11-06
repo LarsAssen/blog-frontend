@@ -27,20 +27,6 @@ export async function getStaticProps(){
   };
 }
 
-export async function getStaticPaths() {
-  const articles = await fetchAPI("/articles")
-
-  // Get the paths we want to pre-render based on posts
-  const paths = articles.map((article:any) => ({
-    params: { id: article.id },
-  }))
-
-  // We'll pre-render only these paths at build time.
-  // { fallback: blocking } will server-render pages
-  // on-demand if the path doesn't exist.
-  return { paths, fallback: 'blocking' }
-}
-
 const Home:React.FC<{articles:Post[], categories:any, homepage:any}> = ({articles, categories, homepage}) => {
   return (
     <div>
