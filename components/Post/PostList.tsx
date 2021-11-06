@@ -17,7 +17,7 @@ type Post = {
 const PostList: React.FC<{ posts: Post[]}> = ({posts}) => {
     return (
       <div className="container mx-auto">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-rows-3 grid-flow-col gap-4">
             {posts.map((post) => {
           return <PostItem post={post} key={`article__${post.slug}`} />
         })}

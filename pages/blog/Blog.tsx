@@ -34,9 +34,8 @@ const Blog: React.FC<{ articles: Post[], blog:any, categories:any}> = ({articles
 
     return (
         <div>
-          <h1>The Blog</h1>
+          <h1 className="px-5 pt-5 pb-5 mx-auto">The Blog</h1>
           <Categories categories={categories} />
-          <input type="search" className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"/>
           <PostList posts={articles} />
         </div>
     )
