@@ -1,8 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
-import Layout from "../../components/Layout/Layout";
-import Image from "../../components/Image/Image";
 import { getStrapiMedia } from "../../lib/media";
 
 
@@ -14,11 +12,11 @@ import { getStrapiMedia } from "../../lib/media";
       published_at: any
   }
 
-const Post: React.FC<{post: Post, categories:any}> = ({post, categories}) => {
+const Post: React.FC<{post: Post}> = ({post}) => {
   const imageUrl = getStrapiMedia(post.image)
 
     return (
-      <Layout categories={categories}>
+      <div>
         <div data-src={imageUrl} data-src-set={imageUrl} data-uk-img>
           <h1>{post.title}</h1>
           <img src={imageUrl} alt="" />
@@ -35,7 +33,7 @@ const Post: React.FC<{post: Post, categories:any}> = ({post, categories}) => {
           </div>
 
         </div>
-      </Layout>
+      </div>
     )
 }
 
@@ -60,7 +58,7 @@ export async function getStaticProps({ params }:any) {
 
   return {
     props: { post: posts[0], categories },
-    revalidate: 1,
+    revalidate: 10,
   };
 }
 

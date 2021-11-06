@@ -1,6 +1,5 @@
 import PostList from "../../components/Post/PostList";
 import { fetchAPI } from "../../lib/api";
-import Layout from "../../components/Layout/Layout";
 
 type Category ={
     name:string,
@@ -8,17 +7,15 @@ type Category ={
     slug: string
 }
 
-const Category:React.FC<{category:Category, categories:any}> = ({ category, categories}) =>{
+const Category:React.FC<{category:Category}> = ({ category }) =>{
 
     return(
-        <Layout categories={categories}>
             <div>
                 <div>
                     <h1>{category.name}</h1>
                     <PostList posts={category.articles} />
                 </div>
             </div>
-        </Layout>
     )
 }
 
