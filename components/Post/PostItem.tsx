@@ -18,7 +18,7 @@ const PostItem: React.FC<{ post: Post}> = ({post}) => {
     return (
         <Link href="/post/[slug]" as={`/post/${post.slug}`} >
             <a>
-                <div className="p-10">
+                <div className="w-full lg:max-w-full lg:flex p-2">
                     <div className="max-w-sm rounded overflow-hidden shadow-lg">
                         <div>
                             <Image image={post.image} />
