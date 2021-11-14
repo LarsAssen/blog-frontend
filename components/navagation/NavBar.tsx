@@ -8,16 +8,16 @@ const items = [
     },
     {
         title: 'Blog',
-        link: "blog/Blog"
+        link: "/blog/Blog"
     },
     {
         title: 'About',
-        link: "about/About"
+        link: "/about/About"
     }
 ]
 
 const NavBar: React.FC = () => {
-    const [activeNav, setActiveNav] = useState<number>(1);
+    const [activeNav, setActiveNav] = useState<number>(0);
 
     const onNavClick = (index: number) => {
         setActiveNav(index)
@@ -29,7 +29,6 @@ const NavBar: React.FC = () => {
         return (<React.Fragment key={item.title}>
             <li className={"py-4 px-2 text-gray-500 font-semibold " + active} onClick={() => onNavClick(index)} ><Link href={item.link}><a>{item.title}</a></Link></li>
         </React.Fragment>)
-        
     })
 
     return (
