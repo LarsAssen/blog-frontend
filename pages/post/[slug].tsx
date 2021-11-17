@@ -49,7 +49,7 @@ export async function getStaticPaths() {
         slug: post.slug,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
