@@ -1,3 +1,4 @@
+import EmailSubscribe from '@/components/EmailSubscription/EmailSubscribe';
 import PostList from '@/components/Post/PostList';
 import { fetchAPI } from 'lib/api';
 import Header from '../components/Header/Header';

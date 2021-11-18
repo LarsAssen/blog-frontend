@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.72",
     "autoprefixer": "^10.3.7",
     "moment": "^2.29.1",
     "next": "11.1.2",
@@ -20,6 +21,7 @@
     "tailwindcss": "^2.2.16"
   },
   "devDependencies": {
+    "@types/mailchimp__mailchimp_marketing": "^3.0.2",
     "@types/react": "17.0.20",
     "autoprefixer": "^10.3.7",
     "eslint": "7.32.0",
