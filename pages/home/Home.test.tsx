@@ -9,7 +9,7 @@ describe("HomePage", () => {
     render(<HomePage />);
 
     const heading = screen.getByText(
-      /Home Page/i
+      /Home Page/
     );
 
     // we can only use toBeInTheDocument because it was imported
