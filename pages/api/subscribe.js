@@ -5,8 +5,8 @@ mailchimp.setConfig({
   server: process.env.MAILCHIMP_API_SERVER
 });
 
-const subscribe = async (req: any, res: any) => {
-  const { email }:any = req.body;
+const subscribe = async (req, res) => {
+  const { email } = req.body;
 
   if (!email) {
     return res.status(400).json({ error: 'Email is required' });
@@ -19,7 +19,7 @@ const subscribe = async (req: any, res: any) => {
     });
 
     return res.status(201).json({ error: '' });
-  } catch (error:any) {
+  } catch (error) {
     return res.status(500).json({ error: error.message || error.toString() });
   }
 };
