@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.72",
@@ -21,11 +22,15 @@
     "tailwindcss": "^2.2.16"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
     "@types/mailchimp__mailchimp_marketing": "^3.0.2",
     "@types/react": "17.0.20",
     "autoprefixer": "^10.3.7",
+    "babel-jest": "^27.3.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "jest": "^27.3.1",
     "postcss": "^8.3.9",
     "tailwindcss": "^2.2.16",
     "typescript": "4.4.3"
