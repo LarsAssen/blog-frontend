@@ -18,7 +18,7 @@ type Post = {
 
 export async function getStaticProps(){
   const [articles, categories, homepage] = await Promise.all([
-    fetchAPI("/articles"),
+    fetchAPI("/articles?_sort=published_at:DESC"),
     fetchAPI("/categories"),
     fetchAPI("/homepage"),
   ])
