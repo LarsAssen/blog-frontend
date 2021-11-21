@@ -16,12 +16,10 @@ type Post = {
 
 const PostList: React.FC<{ posts: Post[]}> = ({posts}) => {
     return (
-      <div className="container mx-auto">
         <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-5">
             {posts.map((post) => {
           return <PostItem post={post} key={`article__${post.slug}`} />
         })}
-        </div>
         </div>
     )
 }
