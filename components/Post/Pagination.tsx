@@ -5,6 +5,8 @@ const Pagination:React.FC<{postsPerPage:number, totalPosts:number, paginateFront
     paginateFront,
     paginateBack,
     currentPage,}) => {
+
+      
     return (
 <div className='py-2'>
       <div>
