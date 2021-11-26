@@ -24,7 +24,7 @@ const NavBar: React.FC = () => {
     }
 
     const renderedNavs = items.map((item, index) =>{
-        const active = index === activeNav ? 'border-b-4 border-purple-500' : '';
+        const active = index === activeNav ? 'border-b-4 border-blue-500' : '';
 
         return (<React.Fragment key={item.title}>
             <li className={"py-4 px-2 text-gray-500 font-semibold " + active} onClick={() => onNavClick(index)} ><Link href={item.link}><a>{item.title}</a></Link></li>

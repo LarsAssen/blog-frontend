@@ -2,19 +2,19 @@ import React from 'react'
 
 const Header: React.FC = () => {
     return (
-    <div className="relative h-64 m-8 overflow-hidden rounded-lg bg-indigo-500">
+    <div className="relative h-64 m-8 overflow-hidden rounded-lg bg-blue-500">
     <div className="absolute z-30 flex w-full h-full">
         <div className="relative z-30 w-5/6 px-6 py-8 text-white md:py-10 md:w-1/2">
-        <h2 className="text-5xl">The Running Explorer</h2>
+        <h2 className="text-5xl text-white">The Running Explorer</h2>
         <span></span>
         </div>
         <div className="absolute top-0 right-0 flex w-full h-full">
-        <div className="w-1/3 h-full bg-indigo-500"></div>
+        <div className="w-1/3 h-full bg-blue-500"></div>
         <div className="relative w-1/3">
             <svg
             fill="currentColor"
             viewBox="0 0 100 100"
-            className="absolute inset-y-0 z-20 h-full text-indigo-500"
+            className="absolute inset-y-0 z-20 h-full text-blue-500"
             >
             <polygon id="diagonal" points="0,0 100,0 50,100 0,100"></polygon>
             </svg>

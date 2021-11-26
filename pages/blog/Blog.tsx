@@ -35,7 +35,6 @@ const Blog: React.FC<{ articles: Post[], blog:any, categories:any}> = ({articles
     return (
         <div>
           <h1 className="px-5 pt-5 pb-5 mx-auto">The Blog</h1>
-          <Categories categories={categories} />
           <PostList posts={articles} />
         </div>
     )

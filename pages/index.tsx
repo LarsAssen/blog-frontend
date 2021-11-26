@@ -4,7 +4,6 @@ import { fetchAPI } from 'lib/api';
 import { useState } from 'react';
 import Header from '../components/Header/Header';
 import Layout from '../components/Layout/Layout';
-import "bootstrap/dist/css/bootstrap.min.css";
 
 type ImageType ={
   alternativeText: string,

@@ -25,7 +25,7 @@ const PostItem: React.FC<{ post: Post}> = ({post}) => {
                         </div>
                         <div className="px-6 py-4">
                             <div className="container h-10">
-                                <h2 className="text-xl mb-2 font-bold text-indigo-500">{post.title}</h2>
+                                <h2 className="text-xl mb-2 font-bold text-blue-500">{post.title}</h2>
                             </div>
                             <div>
                                 <p className="text-gray-700 text-base whitespace-nowrap overflow-hidden overflow-ellipsis">{post.description}</p>
