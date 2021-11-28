@@ -1,8 +1,9 @@
 import React from 'react'
 
-const About: React.FC = () => {
+const About: React.FC<{AboutPage: any}> = ({AboutPage}) => {
     return (
-        <div>
+        <div className= "container w-full md:max-w-3xl mx-auto pt-20">
+            
             <h1>About me</h1>
             <p>Hi everyone, my name is Lars, and Im a software engineering student.
                 Next to writing code, I enjoy finding ways to improve my mental and physical health,

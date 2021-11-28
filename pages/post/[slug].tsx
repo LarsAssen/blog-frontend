@@ -16,7 +16,7 @@ const Post: React.FC<{post: Post}> = ({post}) => {
   const imageUrl = getStrapiMedia(post.image)
 
     return (
-      <div className= "container w-full md:max-w-3xl mx-auto pt-20">
+      <div className="container w-full md:max-w-3xl mx-auto pt-20">
         <div className="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
         <div data-src={imageUrl} data-src-set={imageUrl} data-uk-img>
         <p className="text-base md:text-sm text-green-500 font-bold">&lt; <Link href="/"><a className="text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Back to blog</a></Link></p>
