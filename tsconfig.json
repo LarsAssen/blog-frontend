@@ -19,6 +19,6 @@
       "@/lib/*" : ["./lib"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Header", "pages/api/subscribe.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Header"],
   "exclude": ["node_modules"]
 }

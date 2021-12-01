@@ -2,7 +2,7 @@ import PostList from '@/components/Post/PostList';
 import { fetchAPI } from 'lib/api';
 import { useState } from 'react';
 import Header from '../components/Header/Header';
-import Layout from '../components/Layout/Layout';
+import SubscribeBox from '../components/EmailSubscription/SubscribeBox';
 
 type ImageType ={
   alternativeText: string,
@@ -36,6 +36,7 @@ const Home:React.FC<{articles:Post[], categories:any, homepage:any}> = ({article
       <Header />
       <h2 className="text-3xl text-indigo-500">Latest posts</h2>
       <PostList posts={articles}/>
+      <SubscribeBox />
     </div>
   )
 }

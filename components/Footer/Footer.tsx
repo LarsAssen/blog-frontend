@@ -23,7 +23,7 @@ const Footer:React.FC = () => {
           </ul>
         </div>
         <div className="flex items-center my-4 lg:my-0">
-          <form className="flex flex-wrap items-center justify-center">
+          {/* <form className="flex flex-wrap items-center justify-center">
             <div className="mb-2 lg:mb-0 lg:mr-2">
               <input
                 type="text"
@@ -55,7 +55,7 @@ const Footer:React.FC = () => {
             >
               Subscribe
             </button>
-          </form>
+          </form> */}
         </div>
         <div className="flex justify-center mt-4 lg:mt-0">
           <a href="https://www.facebook.com/lars.assen.9/">
