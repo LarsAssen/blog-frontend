@@ -30,7 +30,7 @@ export async function getStaticProps(){
 
 const Home:React.FC<{articles:Post[], categories:any, homepage:any}> = ({articles, categories, homepage}) => {
 
-  
+  console.log("test" + articles)
   return (
     <div>
       <Header />
