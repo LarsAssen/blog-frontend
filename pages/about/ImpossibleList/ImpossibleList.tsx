@@ -12,7 +12,9 @@ const ImpossibleListPage: React.FC = () => {
             </div>
             <div>
                 <h3>Sports and fitness</h3>
-                
+                <ul>
+                    <li></li>
+                </ul>
             </div>
         </div>
     )
