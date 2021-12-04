@@ -13,6 +13,10 @@ const items = [
     {
         title: 'About',
         link: "/about/About"
+    },
+    {
+        title: 'Current Life',
+        link: '/about/CurrentLife/CurrentLifePage'
     }
 ]
 
