@@ -13,21 +13,20 @@ const items = [
     {
         title: 'About',
         link: "/about/About"
+    },
+    {
+        title: 'Current Life',
+        link: '/about/CurrentLife/CurrentLifePage'
     }
 ]
 
 const NavBar: React.FC = () => {
-    const [activeNav, setActiveNav] = useState<number>(0);
 
-    const onNavClick = (index: number) => {
-        setActiveNav(index)
-    }
 
-    const renderedNavs = items.map((item, index) =>{
-        const active = index === activeNav ? 'border-b-4 border-blue-500' : '';
+    const renderedNavs = items.map((item) =>{
 
         return (<React.Fragment key={item.title}>
-            <li className={"py-4 px-2 text-gray-500 font-semibold " + active} onClick={() => onNavClick(index)} ><Link href={item.link}><a>{item.title}</a></Link></li>
+            <li className={"py-4 px-2 text-gray-500 font-semibold"}><Link href={item.link}><a>{item.title}</a></Link></li>
         </React.Fragment>)
     })
 
@@ -36,11 +35,13 @@ const NavBar: React.FC = () => {
             <div className="max-w-6xl mx-auto px-4">
 				<div className="flex justify-between">
 					<div className="flex space-x-7">
-                        <a href="#" className="flex items-center py-4 px-2">
+                        <Link href="/">
+                        <a className="flex items-center py-4 px-2">
                             <span className="font-semibold text-gray-500 text-lg">
                                 The Running explorer
                             </span>
                         </a>
+                        </Link>
                         <ul className="hidden md:flex items-center space-x-1">
                             {renderedNavs}
                         </ul>
