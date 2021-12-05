@@ -1,6 +1,11 @@
 import React from 'react'
 
-const ImpossibleListComponent:React.FC = () => {
+type ImpossibleListItem ={
+    title: string,
+    description: string
+}
+
+const ImpossibleListComponent:React.FC<{list:ImpossibleListItem[]}> = ({list}) => {
     return (
         <div>
             <ul>
