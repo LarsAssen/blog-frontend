@@ -11,7 +11,8 @@ type Post = {
   title: string,
   slug: string,
   image: ImageType,
-  description: string
+  description: string,
+  category: any
 }
 
 const PostList: React.FC<{ posts: Post[]}> = ({posts}) => {

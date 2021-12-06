@@ -13,7 +13,8 @@ type Post = {
   title: string,
   slug: string,
   image: ImageType,
-  description: string
+  description: string,
+  category: any
 }
 
 export async function getStaticProps(){
@@ -30,7 +31,6 @@ export async function getStaticProps(){
 
 const Home:React.FC<{articles:Post[], categories:any, homepage:any}> = ({articles, categories, homepage}) => {
 
-  console.log("test" + articles)
   return (
     <div>
       <Header />
