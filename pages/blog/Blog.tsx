@@ -14,7 +14,8 @@ type Post = {
     title: string,
     slug: string,
     image: ImageType,
-    description: string
+    description: string,
+    category: any
   }
 
   export async function getStaticProps(){
