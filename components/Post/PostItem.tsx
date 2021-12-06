@@ -11,7 +11,8 @@ type Post = {
     title: string,
     slug: string,
     image: ImageType,
-    description: string
+    description: string,
+    category: any
   }
 
 const PostItem: React.FC<{ post: Post}> = ({post}) => {
@@ -36,7 +37,7 @@ const PostItem: React.FC<{ post: Post}> = ({post}) => {
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Read more
                         </button>
-                        {/* <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span> */}
+                        <span className="inline-block bg-gray-200 rounded-full mx-3 px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{post.category["name"]}</span>
                         </div>
                     </div>
                 </div>
