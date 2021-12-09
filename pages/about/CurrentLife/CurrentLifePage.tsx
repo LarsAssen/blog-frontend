@@ -2,11 +2,11 @@ import React from 'react'
 
 const CurrentLifePage:React.FC = () => {
     return (
-        <div>
-            <h1>What Im currently up to</h1>
-            <div>
+        <div className="container m-3">
+            <h1 className="m-5">Current Life</h1>
+            <div className="ml-5">
                 <h3>What Im currently busy with</h3>
-                <p>Im currently living in Zwolle in the Netherlands, finishing up my Software engineering degree and
+                <p className="w-64">Im currently living in Zwolle in the Netherlands, finishing up my Software engineering degree and
                     doing an internship at Arcady. My time is currently spent doing:
                 </p>
                 <ul>
@@ -16,7 +16,7 @@ const CurrentLifePage:React.FC = () => {
                     <li>Coding and designing this blog.</li>
                 </ul>
             </div>
-            <div>
+            <div className="ml-5 mt-5">
                 <h3>My priorities are</h3>
                 <ul>
                     <li>Getting my software engineering degree.</li>
@@ -25,7 +25,7 @@ const CurrentLifePage:React.FC = () => {
                     <li>Staying fit, healthy and happy.</li>
                 </ul>
             </div>
-            <div>
+            <div className="text-center">
                 <h2>Last updated on 4 December 2021</h2>
             </div>
         </div>
