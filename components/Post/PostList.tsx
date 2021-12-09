@@ -1,19 +1,6 @@
+import { Post } from 'Models/PostModel';
 import React from 'react';
 import PostItem from './PostItem';
-
-
-type ImageType ={
-  alternativeText: string,
-  name: string,
-}
-
-type Post = {
-  title: string,
-  slug: string,
-  image: ImageType,
-  description: string,
-  category: any
-}
 
 const PostList: React.FC<{ posts: Post[]}> = ({posts}) => {
     return (

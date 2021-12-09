@@ -3,19 +3,7 @@ import { fetchAPI } from 'lib/api';
 import { useState } from 'react';
 import Header from '../components/Header/Header';
 import SubscribeBox from '../components/EmailSubscription/SubscribeBox';
-
-type ImageType ={
-  alternativeText: string,
-  name: string,
-}
-
-type Post = {
-  title: string,
-  slug: string,
-  image: ImageType,
-  description: string,
-  category: any
-}
+import { Post } from 'Models/PostModel';
 
 export async function getStaticProps(){
   const [articles, categories, homepage] = await Promise.all([

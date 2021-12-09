@@ -1,19 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from "../Image/Image"
-
-type ImageType ={
-    alternativeText: string,
-    name: string,
-}
-
-type Post = {
-    title: string,
-    slug: string,
-    image: ImageType,
-    description: string,
-    category: any
-  }
+import { Post } from 'Models/PostModel'
 
 const PostItem: React.FC<{ post: Post}> = ({post}) => {
     return (
