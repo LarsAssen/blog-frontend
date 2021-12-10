@@ -1,6 +1,4 @@
 import { Category } from "Models/CategoryModel";
-import { Post } from "Models/PostModel";
-import PostList from "../../components/Post/PostList";
 import { fetchAPI } from "../../lib/api";
 
 
@@ -10,7 +8,7 @@ const CategoryPage:React.FC<{category:Category}> = ({ category }) =>{
             <div>
                 <div>
                     <h1>{category.name}</h1>
-                    <PostList posts={category.articles} />
+                    {/* <PostList posts={category.articles} /> */}
                 </div>
             </div>
     )
