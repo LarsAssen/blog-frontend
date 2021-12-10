@@ -1,13 +1,10 @@
+import { Category } from "Models/CategoryModel";
+import { Post } from "Models/PostModel";
 import PostList from "../../components/Post/PostList";
 import { fetchAPI } from "../../lib/api";
 
-type Category ={
-    name:string,
-    articles:any,
-    slug: string
-}
 
-const Category:React.FC<{category:Category}> = ({ category }) =>{
+const CategoryPage:React.FC<{category:Category}> = ({ category }) =>{
 
     return(
             <div>
@@ -43,4 +40,4 @@ export async function getStaticProps({ params }:any) {
     };
   }
 
-  export default Category;
+  export default CategoryPage;
