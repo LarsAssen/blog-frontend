@@ -4,6 +4,7 @@ export type Post = {
     image: ImageType,
     description: string,
     category: any,
+    tags: any[]
   }
 
   type ImageType ={
