@@ -21,33 +21,49 @@ const items = [
 ]
 
 const NavBar: React.FC = () => {
+    const [active, setActive] = useState(false);
 
+    const handleClick = () => {
+      setActive(!active);
+    };
 
     const renderedNavs = items.map((item) =>{
 
         return (<React.Fragment key={item.title}>
-            <li className={"py-4 px-2 text-gray-500 font-semibold"}><Link href={item.link}><a>{item.title}</a></Link></li>
+            <Link href={item.link}><a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-500 font-bold items-center justify-center hover:text-blue-500" >{item.title}</a></Link>
         </React.Fragment>)
     })
 
     return (
-        <nav className="bg-white shadow-lg">
-            <div className="max-w-6xl mx-auto px-4">
-				<div className="flex justify-between">
-					<div className="flex space-x-7">
+        <nav className="flex items-center flex-wrap bg-gray-100 p-3">
                         <Link href="/">
-                        <a className="flex items-center py-4 px-2">
-                            <span className="font-semibold text-gray-500 text-lg">
+                        <a className="inline-flex items-center p-2 mr-4">
+                            <span className="text-xl text-blue-800 font-bold uppercase tracking-wide">
                                 The Running explorer
                             </span>
                         </a>
                         </Link>
-                        <ul className="hidden md:flex items-center space-x-1">
-                            {renderedNavs}
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                        <div className={`${active ? '' : 'hidden'} w-full lg:inline-flex lg:flex-grow lg:w-auto`}>
+                            <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
+                                {renderedNavs}
+                            </div>
+                        </div>
+            <button className=' inline-flex p-3 hover:bg-blue-500 rounded lg:hidden text-gray-500 ml-auto hover:text-white outline-none' onClick={handleClick}>
+          <svg
+            className='w-6 h-6'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M4 6h16M4 12h16M4 18h16'
+            />
+          </svg>
+        </button>
         </nav>
     )
 }
