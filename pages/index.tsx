@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Header from '../components/Header/Header';
 import SubscribeBox from '../components/EmailSubscription/SubscribeBox';
 import { Post } from 'Models/PostModel';
+import Meta from '@/components/Meta/Meta';
 
 export async function getStaticProps(){
   const [articles, categories, homepage] = await Promise.all([
