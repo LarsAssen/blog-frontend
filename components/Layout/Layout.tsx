@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 const Layout: React.FC = ({children}) => {
     return (
         <div>
-            <Meta title="The Running Explorer" keywords="ultrarunning, books, habits" description="Everything about ultra running, health and self improvement." />
+            <Meta title="The Running Explorer" keywords="ultrarunning, books, habits, travel" description="Everything about ultra running, health and self improvement. Learn all about how to become your best self." />
             <NavBar/>
             <div>
                 <main>
