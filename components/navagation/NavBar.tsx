@@ -38,7 +38,7 @@ const NavBar: React.FC = () => {
         <nav className="flex items-center flex-wrap bg-gray-100 p-3">
                         <Link href="/">
                         <a className="inline-flex items-center p-2 mr-4">
-                            <span className="text-xl text-blue-800 font-bold uppercase tracking-wide">
+                            <span className="text-xl text-blue-500 font-bold uppercase tracking-wide">
                                 The Running explorer
                             </span>
                         </a>
