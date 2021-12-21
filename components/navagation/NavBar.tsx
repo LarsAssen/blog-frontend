@@ -35,7 +35,7 @@ const NavBar: React.FC = () => {
     })
 
     return (
-        <nav className="flex items-center flex-wrap bg-gray-100 p-3">
+        <nav className="sticky top-0 z-50 flex items-center flex-wrap bg-white p-3">
                         <Link href="/">
                         <a className="inline-flex items-center p-2 mr-4">
                             <span className="text-xl text-blue-500 font-bold uppercase tracking-wide">
@@ -48,7 +48,7 @@ const NavBar: React.FC = () => {
                                 {renderedNavs}
                             </div>
                         </div>
-            <button className=' inline-flex p-3 hover:bg-blue-500 rounded lg:hidden text-gray-500 ml-auto hover:text-white outline-none' onClick={handleClick}>
+            <button className=' inline-flex p-3 hover:bg-blue-400 rounded lg:hidden text-blue-500 ml-auto hover:text-white outline-none' onClick={handleClick}>
           <svg
             className='w-6 h-6'
             fill='none'
