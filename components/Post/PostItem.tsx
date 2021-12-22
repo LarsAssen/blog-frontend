@@ -9,11 +9,11 @@ const PostItem: React.FC<{ post: Post}> = ({post}) => {
         <Link href="/post/[slug]" as={`/post/${post.slug}`} >
             <a>
                 <div className="w-full lg:max-w-full lg:flex p-2">
-                    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                    <div className="max-w-sm rounded overflow-hidden border-2">
                         <div>
                             <Image image={post.image} />
                         </div>
-                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
+                        <span className="ml-3 text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
                         {post.category["name"]}
                         </span>
                         <div className="px-6 py-4">

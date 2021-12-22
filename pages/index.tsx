@@ -23,9 +23,11 @@ const Home:React.FC<{articles:Post[], categories:any, homepage:any}> = ({article
   return (
     <div>
       <Header />
-      <h2 className="text-3xl text-indigo-500">Latest posts</h2>
+      <div className='container'>
+      <h2 className="text-3xl ml-8 text-blue-500">Latest posts</h2>
       <PostList posts={articles}/>
       <SubscribeBox />
+      </div>
     </div>
   )
 }
