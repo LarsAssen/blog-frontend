@@ -23,39 +23,6 @@ const Footer:React.FC = () => {
           </ul>
         </div>
         <div className="flex items-center my-4 lg:my-0">
-          {/* <form className="flex flex-wrap items-center justify-center">
-            <div className="mb-2 lg:mb-0 lg:mr-2">
-              <input
-                type="text"
-                name="newsletter"
-                className="
-                  w-full
-                  px-3
-                  py-2
-                  text-gray-700
-                  bg-gray-100
-                  border border-gray-300
-                  rounded
-                  outline-none
-                  focus:ring-1
-                "
-              />
-            </div>
-            <button
-              className="
-                px-6
-                py-2
-                text-white
-                bg-blue-500
-                border-0
-                rounded
-                focus:outline-none
-                hover:bg-blue-700
-              "
-            >
-              Subscribe
-            </button>
-          </form> */}
         </div>
         <div className="flex justify-center mt-4 lg:mt-0">
           <a href="https://www.facebook.com/lars.assen.9/">

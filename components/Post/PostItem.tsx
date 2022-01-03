@@ -11,7 +11,7 @@ const PostItem: React.FC<{ post: Post}> = ({post}) => {
                 <div className="w-full lg:max-w-full lg:flex p-2">
                     <div className="max-w-sm rounded overflow-hidden border-2">
                         <div>
-                            <Image image={post.image} />
+                            <Image  image={post.image} />
                         </div>
                         <span className="ml-3 text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
                         {post.category["name"]}
