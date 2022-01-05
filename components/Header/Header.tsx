@@ -2,11 +2,11 @@ import React from 'react'
 
 const Header: React.FC = () => {
     return (
-    <div className="relative h-64 mb-3 overflow-hidden rounded-lg bg-blue-500">
+    <div className="relative h-64 mb-3 overflow-hidden bg-blue-500">
     <div className="absolute z-30 flex w-full h-full">
         <div className="relative z-30 w-5/6 px-6 py-8 text-white md:py-10 md:w-1/2">
             <h2 className="text-5xl text-white">The Running Explorer</h2>
-            <span></span>
+            <span className='text-white mt-4'>Run. Explore. Find yourself.</span>
         </div>
         <div className="absolute top-0 right-0 flex w-full h-full">
             <div className="w-1/3 h-full bg-blue-500"></div>
