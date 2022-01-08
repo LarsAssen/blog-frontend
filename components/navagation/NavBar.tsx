@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const items = [ 
     {
@@ -30,17 +31,31 @@ const NavBar: React.FC = () => {
     const renderedNavs = items.map((item) =>{
 
         return (<React.Fragment key={item.title}>
-            <Link href={item.link}><a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-500 font-bold items-center justify-center hover:text-blue-500" >{item.title}</a></Link>
+            <Link href={item.link}><a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:text-blue-800" >{item.title}</a></Link>
         </React.Fragment>)
     })
 
     return (
-        <nav className="flex items-center flex-wrap bg-gray-100 p-3">
+        <nav className="sticky top-0 z-50 flex items-center flex-wrap bg-blue-500 p-3">
                         <Link href="/">
                         <a className="inline-flex items-center p-2 mr-4">
-                            <span className="text-xl text-blue-800 font-bold uppercase tracking-wide">
+                        <motion.div initial="hidden" animate="visible" variants={{
+                        hidden: {
+                            scale: .8,
+                            opacity: 0
+                        },
+                        visible: {
+                            scale: 1,
+                            opacity: 1,
+                            transition: {
+                            delay: .4
+                            }
+                        },
+                        }}>
+                            <span className="text-xl text-white font-bold uppercase tracking-wide">
                                 The Running explorer
                             </span>
+                            </motion.div>
                         </a>
                         </Link>
                         <div className={`${active ? '' : 'hidden'} w-full lg:inline-flex lg:flex-grow lg:w-auto`}>
@@ -48,7 +63,7 @@ const NavBar: React.FC = () => {
                                 {renderedNavs}
                             </div>
                         </div>
-            <button className=' inline-flex p-3 hover:bg-blue-500 rounded lg:hidden text-gray-500 ml-auto hover:text-white outline-none' onClick={handleClick}>
+            <button className=' inline-flex p-3 hover:bg-blue-800 rounded lg:hidden text-white ml-auto hover:text-blue-800 outline-none' onClick={handleClick}>
           <svg
             className='w-6 h-6'
             fill='none'
