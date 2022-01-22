@@ -1,0 +1,23 @@
+.footer_border{
+    border-top-width: 1px;
+    border-color: #6d77cd;
+}
+
+.footer{
+    width: 100%;
+    background-color: #2C2525;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer_text{
+    color: #6d77cd;
+    display: flex;
+    font-weight: 700;
+
+}

@@ -1,25 +1,15 @@
 import React from "react";
+import styles from "./footer.module.css";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-gray-200">
-      <div
-        className="
-          container
-          flex flex-wrap
-          items-center
-          justify-center
-          px-4
-          py-8
-          mx-auto
-          lg:justify-between
-        "
-      >
+    <footer className={styles.footer_border}>
+      <div className={styles.footer}>
         <div className="flex flex-wrap justify-center">
           <ul className="flex items-center space-x-4">
-            <li>Home</li>
-            <li>Blog</li>
-            <li>About</li>
+            <li className={styles.footer_text}>Home</li>
+            <li className={styles.footer_text}>Blog</li>
+            <li className={styles.footer_text}>About</li>
           </ul>
         </div>
         <div className="flex items-center my-4 lg:my-0"></div>
