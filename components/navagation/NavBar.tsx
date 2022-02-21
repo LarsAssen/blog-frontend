@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Logo from '../../public/logo.jpg';
+import Logo from '../../public/logo.png';
 
 const items = [ 
     {
