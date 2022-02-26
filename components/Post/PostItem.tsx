@@ -1,9 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from "../Image/Image"
 import { Post } from 'Models/PostModel'
 import { PostTag } from 'Models/PostTag'
 import Tag from './PostTag'
+import PostCategory from './PostCategory'
+import Images from '../Image/Image'
 
 const PostItem: React.FC<{ post: Post}> = ({post}) => {
     return (
@@ -12,11 +13,9 @@ const PostItem: React.FC<{ post: Post}> = ({post}) => {
                 <div className="w-full lg:max-w-full lg:flex p-2">
                     <div className="max-w-sm rounded overflow-hidden shadow-lg">
                         <div>
-                            <Image image={post.image} />
+                            <Images image={post.image} />
                         </div>
-                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
-                        {post.category["name"]}
-                        </span>
+                        <PostCategory categoryName={post.category["name"]} />
                         <div className="px-6 py-4">
                             <div className="container h-10">
                                 <h2 className="text-xl mb-2 font-bold text-blue-500">{post.title}</h2>
