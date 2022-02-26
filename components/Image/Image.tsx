@@ -11,7 +11,7 @@ const Images:React.FC<{image:ImageType|null}> = ({ image }) => {
   return (
     <Image
       src={imageUrl}
-      alt=""
+      alt={image?.alternativeText}
       width={500}
       height={300}
       layout="intrinsic"
