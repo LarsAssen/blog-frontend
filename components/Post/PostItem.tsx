@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from "../Image/Image"
 import { Post } from 'Models/PostModel'
 import { PostTag } from 'Models/PostTag'
+import Tag from './PostTag'
 
 const PostItem: React.FC<{ post: Post}> = ({post}) => {
     return (
@@ -30,7 +31,7 @@ const PostItem: React.FC<{ post: Post}> = ({post}) => {
                             Read more
                         </button>
                         {post.tags.map((tag:PostTag) => {
-                        return <span key={tag.id} className="inline-block bg-gray-200 rounded-full mx-3 px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{tag.Name}</span>
+                        return <Tag key={tag.id} tagName={tag.Name} />
                         })}
                         </div>
                     </div>
