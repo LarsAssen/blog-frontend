@@ -3,13 +3,14 @@ import Link from "next/link";
 import Image from "../Image/Image";
 import { Post } from "Models/PostModel";
 import { PostTag } from "Models/PostTag";
+import CardSmall from "../UI/CardSmall";
+import Tag from "./Tag";
 
 const PostItem: React.FC<{ post: Post }> = ({ post }) => {
   return (
     <Link href="/post/[slug]" as={`/post/${post.slug}`}>
       <a>
-        <div className="w-full lg:max-w-full lg:flex">
-          <div className="max-w-sm rounded overflow-hidden border-2">
+        <CardSmall>
             <div>
               <Image image={post.image} />
             </div>
@@ -34,17 +35,11 @@ const PostItem: React.FC<{ post: Post }> = ({ post }) => {
               </button>
               {post.tags.map((tag: PostTag) => {
                 return (
-                  <span
-                    key={tag.id}
-                    className="inline-block bg-gray-200 rounded-full mx-3 px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                  >
-                    {tag.Name}
-                  </span>
+                  <Tag key={tag.id} tagName={tag.Name} />
                 );
               })}
             </div>
-          </div>
-        </div>
+          </CardSmall>
       </a>
     </Link>
   );
