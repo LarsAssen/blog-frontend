@@ -7,6 +7,7 @@ import CardSmall from "../UI/CardSmall";
 import Tag from "./Tag";
 import PostCategory from "./PostCategory";
 import Button from "../UI/Button";
+import PostItemContent from "./PostItemContent";
 
 const PostItem: React.FC<{ post: Post }> = ({ post }) => {
   return (
@@ -17,18 +18,7 @@ const PostItem: React.FC<{ post: Post }> = ({ post }) => {
               <Image image={post.image} />
             </div>
             <PostCategory categoryName={post.category["name"]} />
-            <div className="px-6 py-4">
-              <div className="container h-10">
-                <h2 className="text-xl mb-2 font-bold text-blue-500">
-                  {post.title}
-                </h2>
-              </div>
-              <div>
-                <p className="text-gray-700 text-base whitespace-nowrap overflow-hidden overflow-ellipsis">
-                  {post.description}
-                </p>
-              </div>
-            </div>
+            <PostItemContent title={post.title} description={post.description} />
             <div className="px-6 pt-4 pb-2">
               <Button>Read more</Button>
               {post.tags.map((tag: PostTag) => {
