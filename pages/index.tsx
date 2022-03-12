@@ -21,12 +21,13 @@ const Home: React.FC<{ articles: Post[]; categories: any; homepage: any }> = ({
   categories,
   homepage,
 }) => {
+
+  var latestPosts = articles.slice(0, 3);
   return (
     <div>
-      <Header />
-      <div className="container">
-        <h2 className="text-3xl ml-8 text-blue-500">Latest posts</h2>
-        <PostList posts={articles} />
+      <div className="container p-10">
+        <h2 className="text-3xl mb-7 text-blue-500">Latest posts</h2>
+        <PostList posts={latestPosts} />
         <SubscribeBox />
       </div>
     </div>
