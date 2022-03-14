@@ -28,7 +28,9 @@ const NavItemList:React.FC = () => {
     })
 
   return (
-    <div>{renderedNavs}</div>
+    <div className='flex flex-col lg:flex-row'>
+        {renderedNavs}
+    </div>
   )
 }
 

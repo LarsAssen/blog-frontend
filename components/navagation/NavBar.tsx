@@ -18,12 +18,12 @@ const NavBar: React.FC = () => {
     return (
         <nav className="sticky top-0 z-50 flex items-center flex-wrap bg-blue-500 p-3">
             <NavLogo />
+            <NavMobileIcon handleClick={handleClick} />
             <div className={`${active ? '' : 'hidden'} w-full lg:inline-flex lg:flex-grow lg:w-auto`}>
-                <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
+                <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start lg:h-auto'>
                     <NavItemList />
                 </div>
             </div>
-            <NavMobileIcon handleClick={handleClick} />
         </nav>
     )
 }

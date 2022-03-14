@@ -2,7 +2,7 @@ import React, { MouseEventHandler } from 'react'
 
 const NavMobileIcon:React.FC<{handleClick:MouseEventHandler}> = ({handleClick}) => {
   return (
-    <button className='inline-flex p-3 hover:bg-blue-800 rounded lg:hidden text-white ml-auto hover:text-blue-800 outline-none' onClick={handleClick}>
+    <button className='inline-flex p-3 rounded lg:hidden text-white ml-auto outline-none' onClick={handleClick}>
         <svg
         className='w-6 h-6'
         fill='none'
