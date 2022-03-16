@@ -2,7 +2,7 @@ import React from 'react'
 
 const FooterSocials:React.FC = () => {
   return (
-    <div className="flex justify-center mt-4 lg:mt-0">
+    <div className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
           <a href="https://www.facebook.com/lars.assen.9/">
             <svg
               fill="currentColor"
