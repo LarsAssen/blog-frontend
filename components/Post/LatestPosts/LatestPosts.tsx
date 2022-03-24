@@ -5,11 +5,15 @@ import PostItem from '../PostItem';
 
 const LatestPosts: React.FC<{ posts: Post[]}> = ({posts}) => {
     return (
-    <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-5">
-        {posts.map((post) => {
-            return <PostItem post={post} key={`article__${post.slug}`} />
-    })}
-    </div>
+    <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+            <div className="flex flex-wrap -m-4">
+                {posts.map((post) => {
+                    return <PostItem post={post} key={`article__${post.slug}`} />
+                })}
+            </div>
+        </div>
+    </section>
     )
 }
 
