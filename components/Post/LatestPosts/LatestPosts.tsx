@@ -7,7 +7,8 @@ const LatestPosts: React.FC<{ posts: Post[]}> = ({posts}) => {
     return (
     <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-            <div className="flex flex-wrap -m-4">
+        <h2 className="text-3xl mb-7 text-blue-500">Latest posts</h2>
+            <div className="flex flex-auto flex-wrap -m-4">
                 {posts.map((post) => {
                     return <PostItem post={post} key={`article__${post.slug}`} />
                 })}

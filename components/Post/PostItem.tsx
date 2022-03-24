@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "../Image/Image";
+import Image from "next/image";
 import { Post } from "Models/PostModel";
 import { PostTag } from "Models/PostTag";
 import CardSmall from "../UI/CardSmall";
@@ -8,11 +8,13 @@ import Tag from "./Tag";
 import PostCategory from "./PostCategory";
 import Button from "../UI/Button";
 import PostItemContent from "./PostItemContent";
+import { getStrapiMedia } from "lib/media";
 
 const PostItem: React.FC<{ post: Post }> = ({ post }) => {
+  const imageUrl = getStrapiMedia(post.image);
   return (
     <CardSmall>
-      <Image image={post.image} />
+      <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={imageUrl} alt={post.image.alternativeText} />
           <div className="p-6">
           <PostCategory categoryName={post.category["name"]} />
           <PostItemContent title={post.title} description={post.description} />
