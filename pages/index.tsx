@@ -26,7 +26,6 @@ const Home: React.FC<{ articles: Post[]; categories: any; homepage: any }> = ({
     <div>
       <div className="p-2">
         <LatestPosts posts={latestPosts} />
-        <SubscribeBox />
       </div>
     </div>
   );
