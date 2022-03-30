@@ -6,7 +6,8 @@ export type Post = {
     image: ImageType,
     description: string,
     category: any,
-    tags: PostTag[]
+    tags: PostTag[],
+    published_at: any
   }
 
   type ImageType ={

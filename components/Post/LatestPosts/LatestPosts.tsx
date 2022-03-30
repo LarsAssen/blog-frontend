@@ -1,6 +1,6 @@
 import { Post } from 'Models/PostModel';
 import React from 'react';
-import PostItem from '../PostItem';
+import PostItem from '../PostItem/PostItemSmall';
 
 
 const LatestPosts: React.FC<{ posts: Post[]}> = ({posts}) => {
