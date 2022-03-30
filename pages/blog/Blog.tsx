@@ -1,12 +1,12 @@
 import React from 'react'
-import PostList from '../../components/Post/PostList';
+import PostList from '../../components/Post/PostList/PostList';
 import { fetchAPI } from 'lib/api';
 import { Post } from 'Models/PostModel';
 
 
   export async function getStaticProps(){
     const [articles, categories, blog] = await Promise.all([
-      fetchAPI("/articles"),
+      fetchAPI("/articles?_sort=published_at:DESC"),
       fetchAPI("/categories"),
       fetchAPI("/blog"),
     ])
@@ -21,7 +21,6 @@ const Blog: React.FC<{ articles: Post[], blog:any, categories:any}> = ({articles
 
     return (
         <div>
-          <h1 className="px-5 pt-5 pb-5 mx-auto">The Blog</h1>
           <PostList posts={articles} />
         </div>
     )
