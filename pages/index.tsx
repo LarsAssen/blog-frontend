@@ -4,28 +4,31 @@ import { Post } from "Models/PostModel";
 import LatestPosts from "@/components/Post/LatestPosts/LatestPosts";
 
 export async function getStaticProps() {
-  const [articles, categories, homepage] = await Promise.all([
-    fetchAPI("/articles?_sort=published_at:DESC"),
+  const [data, categories, homepage] = await Promise.all([
+    fetchAPI("/posts?_sort=published_at:DESC"),
     fetchAPI("/categories"),
     fetchAPI("/homepage"),
   ]);
+
+  var posts = data.data["attributes"];
   return {
-    props: { articles, categories, homepage },
+    props: { posts, categories, homepage },
     revalidate: 10,
   };
 }
 
-const Home: React.FC<{ articles: Post[]; categories: any; homepage: any }> = ({
-  articles,
+const Home: React.FC<{ posts: any[]; categories: any; homepage: any }> = ({
+  posts,
   categories,
   homepage,
 }) => {
 
-  var latestPosts = articles.slice(0, 3);
+  console.log(posts)
+  //var latestPosts = posts.slice(0, 3);
   return (
     <div>
       <div className="p-2">
-        <LatestPosts posts={latestPosts} />
+        {/* <LatestPosts posts={latestPosts} /> */}
       </div>
     </div>
   );
