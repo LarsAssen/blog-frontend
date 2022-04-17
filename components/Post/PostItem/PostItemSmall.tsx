@@ -13,7 +13,7 @@ const PostItemSmall: React.FC<{ post: Post }> = ({ post }) => {
   const imageUrl = getStrapiMedia(post.image);
   return (
     <CardSmall>
-      <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={imageUrl} alt={post.image.alternativeText} />
+      {/* <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={imageUrl} alt={post.image.alternativeText} /> */}
         <div className="p-6">
         <PostCategory categoryName={post.category["name"]} />
         <PostItemContent title={post.title} description={post.description} />
