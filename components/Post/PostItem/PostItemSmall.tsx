@@ -8,15 +8,16 @@ import Tag from "../Tag";
 import PostCategory from "../PostCategory";
 import PostItemContent from "../PostItemContent";
 import { getStrapiMedia } from "lib/media";
+import { parseTwoDigitYear } from "moment";
 
-const PostItemSmall: React.FC<{ post: Post }> = ({ post }) => {
+const PostItemSmall: React.FC<{ post: any }> = ({ post }) => {
   const imageUrl = getStrapiMedia(post.image);
   return (
     <CardSmall>
-      {/* <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={imageUrl} alt={post.image.alternativeText} /> */}
+      <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={post.attributes.Image.data.attributes.url} alt={post.attributes.Image.data.attributes.alternativeText} />
         <div className="p-6">
-        <PostCategory categoryName={post.category} />
-        <PostItemContent title={post.title} description={post.description} />
+        <PostCategory categoryName={post.attributes.category.data.attributes.CategoryName} />
+        <PostItemContent title={post.attributes.Title} description={post.attributes.Description} />
         <div className="flex items-center flex-wrap">
           <Link href="/post/[slug]" as={`/post/${post.slug}`}>
             <a className="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">Read More
@@ -27,11 +28,11 @@ const PostItemSmall: React.FC<{ post: Post }> = ({ post }) => {
             </a>
         </Link>
         <div className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-            {post.tags.map((tag: PostTag) => {
+            {/* {post.attributes.tags.map((tag: any) => {
               return (
                 <Tag key={tag.id} tagName={tag.Name} />
               );
-            })}
+            })} */}
           </div>
         </div>
       </div>

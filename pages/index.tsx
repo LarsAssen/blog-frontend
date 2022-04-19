@@ -21,12 +21,12 @@ const Home: React.FC<{ posts: any; homepage: any }> = ({
   homepage,
 }) => {
 
-  console.log(posts[0].attributes.category);
-  //var latestPosts = posts.slice(0, 3);
+  console.log(posts);
+  var latestPosts = posts.slice(0, 3);
   return (
     <div>
       <div className="p-2">
-        {/* <LatestPosts posts={posts} /> */}
+        <LatestPosts posts={posts} />
       </div>
     </div>
   );
