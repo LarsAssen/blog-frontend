@@ -8,13 +8,12 @@ import Tag from "../Tag";
 import PostCategory from "../PostCategory";
 import PostItemContent from "../PostItemContent";
 import { getStrapiMedia } from "lib/media";
-import { parseTwoDigitYear } from "moment";
 
-const PostItemSmall: React.FC<{ post: any }> = ({ post }) => {
+const PostItemSmall: React.FC<{ post: any, variant:any, className:string }> = ({ post, variant, className }) => {
   const imageUrl = getStrapiMedia(post.image);
   return (
-    <CardSmall>
-      <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={post.attributes.Image.data.attributes.url} alt={post.attributes.Image.data.attributes.alternativeText} />
+    <CardSmall className={className} variant={variant}>
+      <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={imageUrl} alt={post.image.alternativeText} />
         <div className="p-6">
         <PostCategory categoryName={post.attributes.category.data.attributes.CategoryName} />
         <PostItemContent title={post.attributes.Title} description={post.attributes.Description} />
