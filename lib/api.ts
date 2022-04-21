@@ -2,6 +2,7 @@ import qs from 'qs';
 
 export function getStrapiURL(path=""){
     const query = qs.stringify({
+        sort: 'publishedAt:desc',
         populate: "*",
     }, {
         encodeValuesOnly: true,
