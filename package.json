@@ -19,6 +19,7 @@
     "html-entities": "^2.3.2",
     "moment": "^2.29.1",
     "next": "11.1.2",
+    "prettier": "^2.6.2",
     "prop-types": "^15.6.1",
     "radium": "^0.26.1",
     "react": "17.0.2",

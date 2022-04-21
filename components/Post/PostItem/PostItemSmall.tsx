@@ -9,10 +9,10 @@ import PostCategory from "../PostCategory";
 import PostItemContent from "../PostItemContent";
 import { getStrapiMedia } from "lib/media";
 
-const PostItemSmall: React.FC<{ post: Post }> = ({ post }) => {
+const PostItemSmall: React.FC<{ post: Post, variant:any, className:string }> = ({ post, variant, className }) => {
   const imageUrl = getStrapiMedia(post.image);
   return (
-    <CardSmall>
+    <CardSmall className={className} variant={variant}>
       <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={imageUrl} alt={post.image.alternativeText} />
         <div className="p-6">
         <PostCategory categoryName={post.category["name"]} />
