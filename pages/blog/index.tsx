@@ -5,22 +5,20 @@ import { Post } from 'Models/PostModel';
 
 
   export async function getStaticProps(){
-    const [postsData, categories, blog] = await Promise.all([
+    const [postsData, blog] = await Promise.all([
       fetchAPI("/posts"),
-      fetchAPI("/categories"),
-      fetchAPI("/blog"),
+      fetchAPI("/blog-page"),
     ])
 
     const posts = postsData.data as any[]
 
     return {
-      props: {posts, categories, blog},
+      props: {posts, blog},
       revalidate: 10,
     };
   }
 
-
-const Blog: React.FC<{ posts: any[], blog:any, categories:any}> = ({posts, blog, categories}) => {
+const Blog: React.FC<{ posts: any[], blog:any}> = ({posts, blog}) => {
 
     return (
         <div>
