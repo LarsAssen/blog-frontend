@@ -4,7 +4,7 @@ import CurrentlyWorkingOnItem from './CurrentlyWorkingOnItem'
 const CurrentlyWorkingOnList = () => {
   return (
     <div>
-        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Stuff I'm working on</h1>
+        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Stuff Im working on</h1>
         <div className="h-1 w-20 bg-indigo-500 rounded"></div>
         <div className="pt-4 flex flex-wrap -m-4">
             <CurrentlyWorkingOnItem title='Mozart Ultra' subtitle='Running' description="I'm currently training for the Mozart Ultra in June. A race of 78k with about 4000 meters of elevation." />
