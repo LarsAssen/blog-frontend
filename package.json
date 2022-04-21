@@ -21,6 +21,7 @@
     "next": "11.1.2",
     "prettier": "^2.6.2",
     "prop-types": "^15.6.1",
+    "qs": "^6.10.3",
     "radium": "^0.26.1",
     "react": "17.0.2",
     "react-animations": "^1.0.0",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
+    "@types/qs": "^6.9.7",
     "@types/radium": "^0.24.4",
     "@types/react": "17.0.20",
     "@types/react-animations": "^1.0.0",
