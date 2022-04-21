@@ -8,15 +8,15 @@ const items = [
     },
     {
         title: 'Blog',
-        link: "/blog/Blog"
+        link: "/blog"
     },
     {
         title: 'About',
-        link: "/about/About"
+        link: "/about"
     },
     {
         title: 'Current Life',
-        link: '/about/CurrentLife/CurrentLifePage'
+        link: '/about/current-life'
     }
 ]
 

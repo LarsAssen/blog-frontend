@@ -1,5 +1,13 @@
+import qs from 'qs';
+
 export function getStrapiURL(path=""){
-    return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || "https://localhost:1337/"}${path}`;
+    const query = qs.stringify({
+        sort: 'publishedAt:desc',
+        populate: "*",
+    }, {
+        encodeValuesOnly: true,
+    });
+    return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || "https://localhost:1337/api"}${path}?${query}`;
 }
 
 export async function fetchAPI(path:string){
