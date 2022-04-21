@@ -1,5 +1,4 @@
 import { fetchAPI } from "lib/api";
-import SubscribeBox from "../components/EmailSubscription/SubscribeBox";
 import { Post } from "Models/PostModel";
 import LatestPosts from "@/components/Post/LatestPosts/LatestPosts";
 
@@ -20,13 +19,11 @@ const Home: React.FC<{ posts: any; homepage: any }> = ({
   posts,
   homepage,
 }) => {
-
-  console.log(posts);
   var latestPosts = posts.slice(0, 3);
   return (
     <div>
       <div className="p-2">
-        <LatestPosts posts={posts} />
+        <LatestPosts posts={latestPosts} />
       </div>
     </div>
   );
