@@ -11,7 +11,6 @@ import { getStrapiMedia } from "lib/media";
 
 const PostItemSmall: React.FC<{ post: any, variant:any, className:string }> = ({ post, variant, className }) => {
   const imageUrl = getStrapiMedia(post.image);
-  console.log(post)
   return (
     <CardSmall className={className} variant={variant}>
       <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={post.attributes.Image.data.attributes.url} alt={post.attributes.Image.data.attributes.alternativeText} />
