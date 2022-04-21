@@ -11,6 +11,7 @@ import { getStrapiMedia } from "lib/media";
 
 const PostItemSmall: React.FC<{ post: any, variant:any, className:string }> = ({ post, variant, className }) => {
   const imageUrl = getStrapiMedia(post.image);
+  console.log(post)
   return (
     <CardSmall className={className} variant={variant}>
       <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={post.attributes.Image.data.attributes.url} alt={post.attributes.Image.data.attributes.alternativeText} />
@@ -27,11 +28,11 @@ const PostItemSmall: React.FC<{ post: any, variant:any, className:string }> = ({
             </a>
         </Link>
         <div className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-            {/* {post.attributes.tags.map((tag: any) => {
+            {post.attributes.tags.data.map((tag: any) => {
               return (
-                <Tag key={tag.id} tagName={tag.Name} />
+                <Tag key={tag.id} tagName={tag.attributes.TagName} />
               );
-            })} */}
+            })}
           </div>
         </div>
       </div>

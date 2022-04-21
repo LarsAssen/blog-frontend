@@ -21,9 +21,9 @@ const CurrentLifePage:React.FC<{currentLifeData:any}> = ({currentLifeData}) => {
                 <CurrentlyWorkingOnTitle title={currentLifeData.data.attributes.Title} description={currentLifeData.data.attributes.Description} />
                 <CurrentlyWorkingOnList />
             </div>
-        <div className="text-center pb-5">
-            <h2>{currentLifeData.data.attributes.UpdatedDate}</h2>
-        </div>
+            <div className="text-center pb-5">
+                <h2>{currentLifeData.data.attributes.UpdatedDate}</h2>
+            </div>
         </div>
     )
 }
