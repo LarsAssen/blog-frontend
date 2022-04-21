@@ -6,8 +6,6 @@ import Link from 'next/link';
 import qs from 'qs';
 
 const Post: React.FC<{post: any}> = ({post}) => {
-  // const imageUrl = getStrapiMedia(post.attributes.Image)
-  console.log(post)
     const imageUrl = post.attributes.Image.data.attributes.url
     return (
       <div className="container w-full md:max-w-3xl mx-auto pt-20">
