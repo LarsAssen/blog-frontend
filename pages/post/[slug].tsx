@@ -28,7 +28,7 @@ const Post: React.FC<{post: any}> = ({post}) => {
       <div className="container w-full md:max-w-3xl mx-auto pt-20">
         <div className="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
         <div data-src={imageUrl} data-src-set={imageUrl} data-uk-img>
-        <p><Link href="/"><a className="text-base md:text-sm text-blue-500 font-bold no-underline hover:underline"><AiOutlineArrowLeft />Back to blog</a></Link></p>
+        <p><Link href="/"><a className="text-base md:text-sm text-blue-500 font-bold no-underline hover:underline"><AiOutlineArrowLeft className="inline" />Back to blog</a></Link></p>
           <h1 className="pt-4 pb-4">{post.attributes.Title}</h1>
           <span className="text-sm md:text-base font-normal text-gray-600">Published <Moment format="MMM Do YYYY">{post.attributes.publishedAt}</Moment></span>
           <span className="text-sm md:text-base float-right font-normal text-gray-600">{timeToRead} minute read</span>
