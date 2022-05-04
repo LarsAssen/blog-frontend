@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       }
     },
     transition: {
-      duration: 0.4
+      duration: 0.3
     }
   }
 
