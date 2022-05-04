@@ -1,5 +1,5 @@
 {
-  "name": "ghost-blog",
+  "name": "running_explorer_frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -59,8 +59,5 @@
     "postcss": "^8.3.9",
     "tailwindcss": "^2.2.16",
     "typescript": "4.4.3"
-  },
-  "resolutions": {
-    "webpack": "^5"
   }
 }

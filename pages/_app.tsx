@@ -33,19 +33,19 @@ function MyApp({ Component, pageProps }: AppProps) {
     variants: {
       initial: {
         opacity: 0,
-        scale: 0.4
+        x: '-100%',
       },
       animate: {
         opacity: 1,
-        scale: 1
+        x: 0,
       },
       exit: {
         opacity: 0,
-        scale: 0.4
+        x: '-100%'
       }
     },
     transition: {
-      duration: 0.3
+      duration: 0.3,
     }
   }
 
