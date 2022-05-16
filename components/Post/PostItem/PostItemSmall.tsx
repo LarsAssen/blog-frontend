@@ -8,7 +8,6 @@ import Tag from "../Tag";
 import PostCategory from "../PostCategory";
 import PostItemContent from "../PostItemContent";
 import { getStrapiMedia } from "lib/media";
-import {AiOutlineArrowRight} from "react-icons/ai";
 
 const PostItemSmall: React.FC<{ post: any, variant:any, className:string }> = ({ post, variant, className }) => {
   const imageUrl = getStrapiMedia(post.image);
@@ -21,7 +20,6 @@ const PostItemSmall: React.FC<{ post: any, variant:any, className:string }> = ({
         <div className="flex items-center flex-wrap">
           <Link href="/post/[slug]" as={`/post/${post.attributes.Slug}`}>
             <a className="text-main-color inline-flex items-center md:mb-2 lg:mb-0">Read More 
-              <AiOutlineArrowRight />
             </a>
         </Link>
         <div className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">

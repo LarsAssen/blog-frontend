@@ -12,6 +12,9 @@ module.exports = {
         'background-main': '#F2F2F2',
         'background-secondary': '#4c4c4c',
       },
+      fontFamily:{
+        mainFont: ['Montserrat']
+      }
     },
   },
   variants: {
