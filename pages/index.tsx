@@ -2,6 +2,7 @@ import { fetchAPI } from "lib/api";
 import { Post } from "Models/PostModel";
 import LatestPosts from "@/components/Post/LatestPosts/LatestPosts";
 import qs from "qs";
+import Header from "@/components/Header/Header";
 
 export async function getStaticProps() {
   const [postsData, homepage] = await Promise.all([
@@ -23,6 +24,7 @@ const Home: React.FC<{ posts: any; homepage: any }> = ({
   var latestPosts = posts.slice(0, 3);
   return (
     <div>
+      <Header />
       <div className="p-2">
         <LatestPosts posts={latestPosts} />
       </div>

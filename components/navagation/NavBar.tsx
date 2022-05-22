@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
     };
 
     return (
-        <nav className="sticky top-0 z-50 flex items-center flex-wrap bg-blue-500 p-3">
+        <nav className="sticky top-0 z-50 flex items-center flex-wrap bg-main-color p-3">
             <NavLogo />
             <NavMobileIcon handleClick={handleClick} />
             <div className={`${active ? '' : 'hidden'} w-full lg:inline-flex lg:flex-grow lg:w-auto`}>

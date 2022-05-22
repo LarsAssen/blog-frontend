@@ -10,6 +10,7 @@ import Layout from '@/components/Layout/Layout';
 import Script from 'next/script';
 import { useRouter } from 'next/dist/client/router';
 import * as gtag from "../lib/ga/gtag";
+import { AnimatePresence, domAnimation, LazyMotion, m } from 'framer-motion';
 export const GlobalContext = createContext({});
 
 
@@ -26,6 +27,27 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
+  const slideRight = {
+    name: 'Slide Right',
+    variants: {
+      initial: {
+        opacity: 0,
+        x: '-100%',
+      },
+      animate: {
+        opacity: 1,
+        x: 0,
+      },
+      exit: {
+        opacity: 0,
+        x: '-100%'
+      }
+    },
+    transition: {
+      duration: 0.3,
+    }
+  }
 
  return (
  <>
@@ -51,9 +73,23 @@ function MyApp({ Component, pageProps }: AppProps) {
     <link rel="shortcut icon" href={global.data.attributes.Favicon.data.attributes.url} />
   </Head>
   <GlobalContext.Provider value={global}>
-    <Layout>
-    <Component {...pageProps} />
-    </Layout>
+      <Layout>
+      <LazyMotion features={domAnimation}>
+        <AnimatePresence exitBeforeEnter={true}>
+          <m.div
+            key={router.route.concat(slideRight.name)}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className='page-wrap'
+            variants={slideRight.variants}
+            transition={slideRight.transition}
+          >
+            <Component {...pageProps} />
+          </m.div>
+        </AnimatePresence>
+      </LazyMotion>
+      </Layout>
   </GlobalContext.Provider>
   </> 
 )}

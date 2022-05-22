@@ -4,16 +4,34 @@ import { fetchAPI } from "../../lib/api";
 import { getStrapiMedia } from "../../lib/media";
 import Link from 'next/link';
 import qs from 'qs';
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useEffect, useState } from "react";
 
 const Post: React.FC<{post: any}> = ({post}) => {
+    const [timeToRead, setTimeToRead] = useState(0);
+
+    const handleTimeToRead = async () => {
+      const text = post.attributes.Content;
+
+      const wpm = 180;
+      const words = text.trim().split(/\s+/).length;
+      const time = Math.ceil(words / wpm);
+      setTimeToRead(time);  
+    }
+
+    useEffect(() => {
+      handleTimeToRead();
+    }, []);
+
     const imageUrl = post.attributes.Image.data.attributes.url
     return (
       <div className="container w-full md:max-w-3xl mx-auto pt-20">
         <div className="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
         <div data-src={imageUrl} data-src-set={imageUrl} data-uk-img>
-        <p className="text-base md:text-sm text-green-500 font-bold">&lt; <Link href="/"><a className="text-base md:text-sm text-green-500 font-bold no-underline hover:underline">Back to blog</a></Link></p>
+        <p><Link href="/"><a className="text-base md:text-sm text-blue-500 font-bold no-underline hover:underline"><AiOutlineArrowLeft className="inline" />Back to blog</a></Link></p>
           <h1 className="pt-4 pb-4">{post.attributes.Title}</h1>
-          <p className="text-sm md:text-base font-normal text-gray-600">Published <Moment format="MMM Do YYYY">{post.attributes.publishedAt}</Moment></p>
+          <span className="text-sm md:text-base font-normal text-gray-600">Published <Moment format="MMM Do YYYY">{post.attributes.publishedAt}</Moment></span>
+          <span className="text-sm md:text-base float-right font-normal text-gray-600">{timeToRead} minute read</span>
           <img src={post.attributes.Image.data.attributes.url} alt={post.attributes.Image.data.attributes.alternativeText} />
         </div>
         <div>

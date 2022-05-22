@@ -5,18 +5,18 @@
 
 @layer base {
     h1 {
-      @apply text-4xl text-blue-600;
+      @apply text-4xl text-main-color font-mainFont;
     }
     h2 {
-      @apply text-3xl text-blue-400;
+      @apply text-3xl text-main-color font-mainFont;
     }
     h3{
-      @apply text-2xl text-blue-400;
+      @apply text-2xl text-main-color font-mainFont;
     }
     h4{
-      @apply text-xl text-blue-400;
+      @apply text-xl text-main-color;
     }
     p{
-      @apply py-6;
+      @apply py-6 font-mainFont;
     }
   }
