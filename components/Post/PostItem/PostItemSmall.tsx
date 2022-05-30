@@ -16,7 +16,7 @@ const PostItemSmall: React.FC<{ post: any, variant:any, className:string }> = ({
       <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={post.attributes.Image.data.attributes.url} alt={post.attributes.Image.data.attributes.alternativeText} />
         <div className="p-6">
         <PostCategory categoryName={post.attributes.category.data.attributes.CategoryName} />
-        <PostItemContent title={post.attributes.Title} description={post.attributes.Description} />
+        <PostItemContent title={post.attributes.Title} description={post.attributes.Description} />        
         <div className="flex items-center flex-wrap">
           <Link href="/post/[slug]" as={`/post/${post.attributes.Slug}`}>
             <a className="text-main-color inline-flex items-center md:mb-2 lg:mb-0">Read More 
