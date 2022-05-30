@@ -30,7 +30,7 @@ const LatestPosts: React.FC<{ posts: any[]}> = ({posts}) => {
         <div className="container px-5 py-24 mx-auto">
         {/* <h2 className="text-3xl mb-7 text-blue-500">Latest posts</h2> */}
         <TitleBig titleText='Latest posts' />
-            <motion.div className="flex flex-auto flex-wrap -m-4 list" variants={list} initial="hidden" animate="visible">
+            <motion.div className="flex flex-auto flex-wrap mt-5 -m-4 list" variants={list} initial="hidden" animate="visible">
                 {posts.map((post, index) => {
                     return <motion.div className="item md:w-1/3" variants={item} key={index}><PostItem className="item" variant={item} post={post} key={index} /></motion.div>
                 })}

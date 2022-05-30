@@ -1,12 +1,11 @@
 import React from 'react'
+import TitleSmall from '../UI/Title/TitleSmall'
 
 const PostItemContent:React.FC<{title: string, description: string}> = ({title, description}) => {
   return (
     <div>
-      <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-        {title}
-      </h1>
-      <p className="leading-relaxed mb-3 line-clamp-3">
+      <TitleSmall titleText={title} />
+      <p className="leading-relaxed mb-3 line-clamp-2">
         {description}
       </p>
   </div>
