@@ -22,14 +22,15 @@ const PostItemSmall: React.FC<{ post: any, variant:any, className:string }> = ({
             <a className="text-main-color inline-flex items-center md:mb-2 lg:mb-0">Read More 
             </a>
         </Link>
-        <div className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+
+        </div>
+        <div className="flex float-right flex-row mt-6 mb-2">
             {post.attributes.tags.data.map((tag: any) => {
               return (
                 <Tag key={tag.id} tagName={tag.attributes.TagName} />
               );
             })}
           </div>
-        </div>
       </div>
     </CardSmall>
   );
