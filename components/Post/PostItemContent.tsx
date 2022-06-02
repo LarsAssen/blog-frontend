@@ -3,7 +3,7 @@ import TitleSmall from '../UI/Title/TitleSmall'
 
 const PostItemContent:React.FC<{title: string, description: string}> = ({title, description}) => {
   return (
-    <div>
+    <div className='mt-2'>
       <div className='h-20'>
         <TitleSmall titleText={title} />
       </div>
