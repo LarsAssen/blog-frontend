@@ -2,18 +2,15 @@ import CardBig from '@/components/UI/CardBig'
 import { Post } from 'Models/PostModel'
 import Link from 'next/link'
 import React from 'react'
-import Moment from 'react-moment'
-import PostCategory from '../PostCategory'
+import Image from 'next/image'
+import TitleSmall from '@/components/UI/Title/TitleSmall'
 
 const PostItemBig: React.FC<{ post: any }> = ({ post }) => {
   return (
     <CardBig>
-      <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <PostCategory categoryName={post.attributes.category.data.attributes.CategoryName} />
-        <span className="mt-1 text-gray-500 text-sm"><Moment format="MMM Do YYYY">{post.attributes.publishedAt}</Moment></span>
-      </div>
+      <Image width={300} height={300} className="lg:h-48 md:h-36 w-full object-cover object-center" src={post.attributes.Image.data.attributes.url} alt={post.attributes.Image.data.attributes.alternativeText} />
       <div className="md:flex-grow">
-          <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">{post.attributes.Title}</h2>
+        <TitleSmall titleText={post.attributes.Title} />
           <p className="leading-relaxed">{post.attributes.Description}</p>
           <Link href="/post/[slug]" as={`/post/${post.attributes.Slug}`}>
           <a className="text-indigo-500 inline-flex items-center mt-4">Learn More
