@@ -1,16 +1,17 @@
+import TitleBig from '@/components/UI/Title/TitleBig'
 import React from 'react'
 import CurrentlyWorkingOnItem from './CurrentlyWorkingOnItem'
 
 const CurrentlyWorkingOnList = () => {
+
+  const currentlyWorkingOnItems = ["Training for the Mozart Ultra 75k", "Planning my wedding in September this year with my fiancee.", "My current job at Arcady.", "Making this blog more beautiful."]
+  const prioritiesItems = ["Staying in great shape by working out and running", "Planning a wedding", "Getting my daily habits done", "Spending time with my family and friends"]
+
   return (
     <div>
-        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Stuff Im working on</h1>
-        <div className="h-1 w-20 bg-indigo-500 rounded"></div>
-        <div className="pt-4 flex flex-wrap -m-4">
-            <CurrentlyWorkingOnItem title='Mozart Ultra' subtitle='Running' description="I'm currently training for the Mozart Ultra in June. A race of 78k with about 4000 meters of elevation." />
-            <CurrentlyWorkingOnItem title='Renewing Blog' subtitle='Blog' description="I'm currently updating the blog into a more personal website, that fit's who I am. I'm trying out new things, and seeing what works best for me."/>
-            <CurrentlyWorkingOnItem title='Wedding planning' subtitle='Personal' description="This year, we are getting married. We're very excited about it, and I cannot wait to marry the girl of my dreams."/>
-            <CurrentlyWorkingOnItem title='Full stack web developer' subtitle='Work' description="I've started working as a full stack web developer at Arcady. I'm learning a whole lot of new things, I hope to get much better at creating and building web apps."/>
+        <div className="pt-4 flex flex-wrap">
+            <CurrentlyWorkingOnItem title="What I'm currently working on." description="All the stuff I'm currently busy with." items={currentlyWorkingOnItems} />
+            <CurrentlyWorkingOnItem title="What my priorities are." description="What things are most important to me right now during the day." items={prioritiesItems} />
         </div>
     </div>
   )
