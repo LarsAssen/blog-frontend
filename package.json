@@ -12,6 +12,9 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@mailchimp/mailchimp_marketing": "^3.0.72",
     "@tailwindcss/line-clamp": "^0.3.1",
     "autoprefixer": "^10.3.7",

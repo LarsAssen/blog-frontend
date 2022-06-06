@@ -1,13 +1,24 @@
+import TitleSmall from '@/components/UI/Title/TitleSmall'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBolt } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 
-const CurrentlyWorkingOnItem:React.FC<{subtitle: string, title:string, description:string}> = ({subtitle, title, description}) => {
+const CurrentlyWorkingOnItem:React.FC<{title:string, description:string, items: string[]}> = ({title, description, items}) => {
   return (
-    <div className="xl:w-1/4 md:w-1/2 p-4">
-    <div className="bg-gray-100 p-6 rounded-lg">
-      <img className="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/723x403" alt="content"></img>
-      <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">{subtitle}</h3>
-      <h2 className="text-lg text-gray-900 font-medium title-font mb-4">{title}</h2>
-      <p className="leading-relaxed text-base">{description}</p>
+    <div className="border rounded-xl shadow-xl md:w-2/5">
+    <div className="p-6 rounded-lg">
+      <TitleSmall titleText={title} />
+      <p>{description}</p>
+      <ul>
+        {items.map(item => {
+          return (
+          <p key={item}>
+          <FontAwesomeIcon className='text-main-color' icon={faBolt} />
+          <span className=''> {item}</span>
+          </p>
+          )
+        })}
+      </ul>
     </div>
   </div>
   )
