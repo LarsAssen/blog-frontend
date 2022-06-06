@@ -12,7 +12,7 @@ const SubscribeBox = () => {
     try {
       const response = await axios.post("/api/newsletter", { email })
       setState("SUCCESS")
-    } catch (e) {
+    } catch (e:any) {
       setErrorMessage(e.response.data.error)
       setState("ERROR")
     }
@@ -33,7 +33,7 @@ const SubscribeBox = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-main-color text-white font-bold py-2 px-4 rounded"
           type="button"
           disabled={state === "LOADING"}
           onClick={subscribe}

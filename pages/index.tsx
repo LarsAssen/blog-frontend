@@ -3,6 +3,7 @@ import { Post } from "Models/PostModel";
 import LatestPosts from "@/components/Post/LatestPosts/LatestPosts";
 import qs from "qs";
 import Header from "@/components/Header/Header";
+import SubscribeBox from "@/components/EmailSubscription/SubscribeBox";
 
 export async function getStaticProps() {
   const [postsData, homepage] = await Promise.all([
@@ -27,6 +28,7 @@ const Home: React.FC<{ posts: any; homepage: any }> = ({
       <Header />
       <div className="p-2">
         <LatestPosts posts={latestPosts} />
+        <SubscribeBox />
       </div>
     </div>
   );

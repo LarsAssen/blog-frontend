@@ -2,6 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import AboutMeImage from '../../imgs/about-me.jpg'
 import { fetchAPI } from 'lib/api'
+import TitleBig from '@/components/UI/Title/TitleBig'
+import TitleSmall from '@/components/UI/Title/TitleSmall'
 
 export async function getStaticProps(){
     const [aboutData] = await Promise.all([
@@ -18,21 +20,26 @@ const About: React.FC<{aboutData: any}> = ({aboutData}) => {
     return (
         <div className="container flex flex-wrap px-5 py-24 mx-auto">  
             <div className='md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200'>
-                <h1>{aboutData.data.attributes.Title}</h1>
+                <TitleBig titleText={aboutData.data.attributes.Title} />
                 <p>{aboutData.data.attributes.AboutMeText}</p>
-                <Image src={AboutMeImage} alt="About me" width={400} height={600} />
+                <TitleSmall titleText="What I do" />
+                <p>Over the last few years, I’ve gotten into ultra trail running
+                    and self development. I’m always exploring new trails and
+                    idea’s. I’m working as a web developer building new software
+                    and awesome applications. In my free time, I love to read, run
+                    and write. I also love to work out and hang out with friends. 
+                </p>
+                <TitleSmall titleText="About this blog" />
+                <p>I started this blog as a way to share my running and
+                    personal adventures, as well as new idea’s and other awesome
+                    stuff that is going on in my life. I also love to share some wisdom
+                    and thoughts on health, self development and running.
+                </p>
+                <TitleSmall titleText="Where to find me" />
+                
             </div>
             <div className='md:py-8 flex flex-col md:w-1/2 md:pl-12'>
-                <h1 className='title-font font-semibold tracking-wider mb-3'>My hobbies</h1>
-                <div>
-                    <ul>
-                        <li>Guitar</li>
-                        <li>Sketching</li>
-                        <li>Running</li>
-                        <li>Reading</li>
-                        <li>Writing</li>
-                    </ul>
-                </div>
+                <Image className='rounded-xl' src={AboutMeImage} alt="About me" width={900} height={1200} />
             </div>
         </div>
     )

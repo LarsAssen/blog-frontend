@@ -1,5 +1,6 @@
 import CurrentlyWorkingOnList from '@/components/About/CurrentLife/CurrentlyWorkingOnList'
 import CurrentlyWorkingOnTitle from '@/components/About/CurrentLife/CurrentlyWorkingOnTitle'
+import TitleBig from '@/components/UI/Title/TitleBig'
 import { fetchAPI } from 'lib/api'
 import React from 'react'
 
@@ -16,15 +17,14 @@ export async function getStaticProps(){
 
 const CurrentLifePage:React.FC<{currentLifeData:any}> = ({currentLifeData}) => {
     return (
-        <div className='text-gray-600 body-font'>
-            <div className="container px-5 py-24 mx-auto">
-                <CurrentlyWorkingOnTitle title={currentLifeData.data.attributes.Title} description={currentLifeData.data.attributes.Description} />
-                <CurrentlyWorkingOnList />
-            </div>
-            <div className="text-center pb-5">
+          <div className="container px-5 py-24 mx-auto">
+            <TitleBig titleText={currentLifeData.data.attributes.Title} />
+            <p>{currentLifeData.data.attributes.Description}</p>
+            <CurrentlyWorkingOnList />
+            <div className="text-left pt-5 pb-5">
                 <h2>{currentLifeData.data.attributes.UpdatedDate}</h2>
             </div>
-        </div>
+          </div>
     )
 }
 

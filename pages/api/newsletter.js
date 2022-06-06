@@ -33,7 +33,7 @@ function getRequestParams(email) {
   }
 }
 
-export default async (req, res) => {
+const newsletterAPI =  async (req, res) => {
   const { email } = req.body
 
   if (!email || !email.length) {
@@ -55,3 +55,5 @@ export default async (req, res) => {
     })
   }
 }
+
+export default newsletterAPI;
