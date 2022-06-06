@@ -9,7 +9,7 @@ const CurrentlyWorkingOnList = () => {
 
   return (
     <div>
-        <div className="pt-4 flex flex-wrap">
+        <div className="pt-4 flex flex-wrap justify-between">
             <CurrentlyWorkingOnItem title="What I'm currently working on." description="All the stuff I'm currently busy with." items={currentlyWorkingOnItems} />
             <CurrentlyWorkingOnItem title="What my priorities are." description="What things are most important to me right now during the day." items={prioritiesItems} />
         </div>

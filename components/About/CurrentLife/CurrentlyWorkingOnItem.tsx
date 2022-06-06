@@ -5,7 +5,7 @@ import React from 'react'
 
 const CurrentlyWorkingOnItem:React.FC<{title:string, description:string, items: string[]}> = ({title, description, items}) => {
   return (
-    <div className="xl:w-1/2 border rounded-xl p-2 shadow-xl md:w-1/2">
+    <div className="border rounded-xl shadow-xl md:w-2/5">
     <div className="p-6 rounded-lg">
       <TitleSmall titleText={title} />
       <p>{description}</p>
