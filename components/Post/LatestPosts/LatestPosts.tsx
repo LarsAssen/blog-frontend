@@ -24,7 +24,7 @@ const list = {
     }
   };
 
-const LatestPosts: React.FC<{ posts: any[]}> = ({posts}) => {
+const LatestPosts: React.FC<{ posts: Post[]}> = ({posts}) => {
     return (
     <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
