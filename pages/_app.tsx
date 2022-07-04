@@ -71,6 +71,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
   <Head>
     <link rel="shortcut icon" href={global.data.attributes.Favicon.data.attributes.url} />
+    
   </Head>
   <GlobalContext.Provider value={global}>
       <Layout>
