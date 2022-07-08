@@ -1,7 +1,7 @@
 import React from 'react'
 import PostList from '../../components/Post/PostList/PostList';
 import { fetchAPI } from 'lib/api';
-import { Post } from 'Models/PostModel';
+import Post from 'Models/PostModel';
 
 
   export async function getStaticProps(){

@@ -1,5 +1,4 @@
 import CurrentlyWorkingOnList from '@/components/About/CurrentLife/CurrentlyWorkingOnList'
-import CurrentlyWorkingOnTitle from '@/components/About/CurrentLife/CurrentlyWorkingOnTitle'
 import TitleBig from '@/components/UI/Title/TitleBig'
 import { fetchAPI } from 'lib/api'
 import React from 'react'

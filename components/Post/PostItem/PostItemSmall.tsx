@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Post } from "Models/PostModel";
-import { PostTag } from "Models/PostTag";
+import Post from "Models/PostModel";
+import PostTag from "Models/PostTag";
 import CardSmall from "../../UI/CardSmall";
 import Tag from "../Tag";
 import PostCategory from "../PostCategory";
