@@ -1,7 +1,7 @@
-import { PostTag } from "./PostTag";
+import PostTag from "Models/PostTag";
 import { Category } from "./CategoryModel";
 
-export type Post = {
+interface Post {
   id: number;
   title: string;
   slug: string;
@@ -10,10 +10,12 @@ export type Post = {
   category: Category;
   tags: PostTag[];
   published_at: any;
-};
+}
 
-type ImageType = {
+interface ImageType {
   alternativeText: string;
   name: string;
   url: string;
-};
+}
+
+export default Post;
