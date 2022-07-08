@@ -1,7 +1,6 @@
 import { fetchAPI } from "lib/api";
 import { Post } from "Models/PostModel";
 import LatestPosts from "@/components/Post/LatestPosts/LatestPosts";
-import qs from "qs";
 import Header from "@/components/Header/Header";
 import SubscribeBox from "@/components/EmailSubscription/SubscribeBox";
 
@@ -10,7 +9,7 @@ export async function getStaticProps() {
     fetchAPI(`/posts`),
     fetchAPI("/homepage"),
   ]);
-  var posts = postsData.data as any[];
+  var posts = postsData.data as Post[];
   return {
     
     props: { posts, homepage },
@@ -18,7 +17,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home: React.FC<{ posts: any; homepage: any }> = ({
+const Home: React.FC<{ posts: Post[]; homepage: any }> = ({
   posts,
   homepage,
 }) => {

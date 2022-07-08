@@ -1,16 +1,19 @@
-import { PostTag } from "./PostTag"
+import { PostTag } from "./PostTag";
+import { Category } from "./CategoryModel";
 
 export type Post = {
-    title: string,
-    slug: string,
-    image: ImageType,
-    description: string,
-    category: any,
-    tags: PostTag[],
-    published_at: any
-  }
+  id: number;
+  title: string;
+  slug: string;
+  image: ImageType;
+  description: string;
+  category: Category;
+  tags: PostTag[];
+  published_at: any;
+};
 
-  type ImageType ={
-    alternativeText: string,
-    name: string,
-}
+type ImageType = {
+  alternativeText: string;
+  name: string;
+  url: string;
+};

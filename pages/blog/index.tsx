@@ -10,7 +10,20 @@ import { Post } from 'Models/PostModel';
       fetchAPI("/blog-page"),
     ])
 
-    const posts = postsData.data as any[]
+    const posts = postsData.data.map((post:any) => {
+      console.log(post.attributes.Image)
+      return { 
+        id: post.id,
+        title: post.attributes.Title, 
+        slug: post.attributes.Slug,
+        image: post.attributes.Image.data.attributes,
+        description: post.attributes.Description,
+        category: post.attributes.category,
+        tags: post.attributes.tags.data,
+        published_at: post.attributes.publishedAt
+        } as Post
+    }
+    )
 
     return {
       props: {posts, blog},
@@ -18,7 +31,7 @@ import { Post } from 'Models/PostModel';
     };
   }
 
-const Blog: React.FC<{ posts: any[], blog:any}> = ({posts, blog}) => {
+const Blog: React.FC<{ posts: Post[], blog:any}> = ({posts, blog}) => {
 
     return (
         <div>
