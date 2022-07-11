@@ -11,7 +11,6 @@ import Post from 'Models/PostModel';
     ])
 
     const posts = postsData.data.map((post:any) => {
-      console.log(post.attributes.Image)
       return { 
         id: post.id,
         title: post.attributes.Title, 
