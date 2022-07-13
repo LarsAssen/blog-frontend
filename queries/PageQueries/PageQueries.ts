@@ -2,14 +2,13 @@ import { gql } from "@apollo/client";
 
 const GET_HOME_PAGE = gql`
   query GetHomePage {
-    homePage {
+    homepage {
       data {
         attributes {
-          title
-          description
-          image {
-            url
-          }
+          Title
+          HeroSection
+          MetaTitle
+          MetaDescription
         }
       }
     }
