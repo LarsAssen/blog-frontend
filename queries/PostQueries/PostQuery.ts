@@ -1,38 +1,51 @@
 import { gql } from "@apollo/client";
 
 const GET_POSTS = gql`
-    posts {
-          data{
-            attributes{
-
-              category{
-                data{
-                  attributes{
-                    CategoryDescription
-                }
+  query {
+    posts(sort: "publishedAt:desc") {
+      data {
+        id
+        attributes {
+          Title
+          Description
+          publishedAt
+          Content
+          Slug
+          Image {
+            data {
+              attributes {
+                url
+                alternativeText
+                name
+              }
+            }
+          }
+          category {
+            data {
+              id
+              attributes {
+                CategoryName
+                CategoryDescription
+              }
+            }
+          }
+          tags {
+            data {
+              attributes {
+                TagDescription
+                TagName
               }
             }
           }
         }
-    }
-`;
-
-const GET_POST = gql``;
-
-const GET_LATEST_POSTS = gql`
-    posts {
-        data{
-            attributes{
-                category{
-                    data{
-                        attributes{
-                            CategoryDescription
-                        }
-                    }
-                }
-            }
+      }
+      meta {
+        pagination {
+          pageCount
         }
+      }
     }
+  }
 `;
 
-export { GET_POSTS, GET_POST };
+export { GET_POSTS };

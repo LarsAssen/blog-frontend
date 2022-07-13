@@ -1,8 +1,9 @@
 import Post from "Models/PostModel";
 
 export type Category = {
+  id: number;
   name: string;
-  articles: Post[];
+  description: string;
   slug: string;
 };
 
