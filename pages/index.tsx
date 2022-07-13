@@ -10,26 +10,6 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
     cache: new InMemoryCache(),
   });
 
-  const posts = client.query({
-    query: gql`
-      query {
-        posts {
-          data{
-            attributes{
-              Description
-            }
-          }
-        }
-      }
-    `,
-  }).then((res) => {
-    console.log(res.data.posts.data);
-    return res.data.posts.data;
-  })
-
-
-
-
 export async function getStaticProps() {
   const [postsData, homepage] = await Promise.all([
     fetchAPI(`/posts`),
