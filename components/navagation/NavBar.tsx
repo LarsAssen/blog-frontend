@@ -1,12 +1,7 @@
 import React, { useState } from 'react'
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
 import NavLogo from './NavLogo';
 import NavMobileIcon from './NavMobileIcon';
 import NavItemList from './NavItemList';
-
-
 
 const NavBar: React.FC = () => {
     const [active, setActive] = useState(false);

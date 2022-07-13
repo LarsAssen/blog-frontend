@@ -1,4 +1,3 @@
-import TitleBig from '@/components/UI/Title/TitleBig'
 import React from 'react'
 import CurrentlyWorkingOnItem from './CurrentlyWorkingOnItem'
 

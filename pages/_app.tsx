@@ -1,11 +1,9 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app';
-import Footer from '@/components/Footer/Footer';
 import App from "next/app"
 import Head from "next/head"
 import {createContext, useEffect} from "react"
 import {fetchAPI} from "../lib/api";
-import {getStrapiMedia} from "../lib/media";
 import Layout from '@/components/Layout/Layout';
 import Script from 'next/script';
 import { useRouter } from 'next/dist/client/router';

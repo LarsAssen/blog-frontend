@@ -1,17 +1,18 @@
 import { fetchAPI } from "lib/api";
-import { Post } from "Models/PostModel";
+import Post from "Models/PostModel";
 import LatestPosts from "@/components/Post/LatestPosts/LatestPosts";
 import Header from "@/components/Header/Header";
 import SubscribeBox from "@/components/EmailSubscription/SubscribeBox";
+import { getHomePage } from "services/pageServices/pageServices";
+import { getPosts } from "services/postServices/postService";
 
 export async function getStaticProps() {
-  const [postsData, homepage] = await Promise.all([
-    fetchAPI(`/posts`),
-    fetchAPI("/homepage"),
+  const [posts, homepage] = await Promise.all([
+    getPosts(),
+    getHomePage(),
   ]);
-  var posts = postsData.data as Post[];
+
   return {
-    
     props: { posts, homepage },
     revalidate: 10,
   };

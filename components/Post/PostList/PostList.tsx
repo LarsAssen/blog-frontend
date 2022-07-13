@@ -1,5 +1,5 @@
 import TitleBig from '@/components/UI/Title/TitleBig';
-import { Post } from 'Models/PostModel';
+import Post from 'Models/PostModel';
 import React from 'react';
 import PostItem from '../PostItem/PostItemBig';
 

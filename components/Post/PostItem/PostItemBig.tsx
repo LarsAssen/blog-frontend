@@ -1,12 +1,12 @@
 import CardBig from '@/components/UI/CardBig'
-import { Post } from 'Models/PostModel'
+import Post from 'Models/PostModel'
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 import TitleSmall from '@/components/UI/Title/TitleSmall'
 import PostCategory from '../PostCategory'
 import Tag from '../Tag'
-import { PostTag } from 'Models/PostTag'
+import PostTag from 'Models/PostTag'
 
 const PostItemBig: React.FC<{ post: Post }> = ({ post }) => {
   return (

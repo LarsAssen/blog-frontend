@@ -1,7 +1,7 @@
 import React from 'react'
 import PostList from '../../components/Post/PostList/PostList';
 import { fetchAPI } from 'lib/api';
-import { Post } from 'Models/PostModel';
+import Post from 'Models/PostModel';
 
 
   export async function getStaticProps(){
@@ -11,7 +11,6 @@ import { Post } from 'Models/PostModel';
     ])
 
     const posts = postsData.data.map((post:any) => {
-      console.log(post.attributes.Image)
       return { 
         id: post.id,
         title: post.attributes.Title, 
