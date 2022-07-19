@@ -1,5 +1,5 @@
 interface PostTag {
-  Name: string;
+  name: string;
   created_at: string;
   id: number;
   updated_at: string;
