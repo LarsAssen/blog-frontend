@@ -1,4 +1,3 @@
-import { fetchAPI } from "lib/api";
 import Post from "Models/PostModel";
 import LatestPosts from "@/components/Post/LatestPosts/LatestPosts";
 import Header from "@/components/Header/Header";

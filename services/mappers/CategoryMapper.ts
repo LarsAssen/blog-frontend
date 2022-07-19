@@ -8,4 +8,12 @@ const mapToCategory = (category: any): Category => {
   } as Category;
 };
 
-export default mapToCategory;
+const mapToCategoryList = (categories: any): Category[] => {
+  const categoryList: Category[] = [];
+  categories.map((category: any) => {
+    categoryList.push(mapToCategory(category));
+  });
+  return categoryList;
+};
+
+export { mapToCategory, mapToCategoryList };

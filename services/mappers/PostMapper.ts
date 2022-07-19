@@ -1,5 +1,5 @@
 import Post from "Models/PostModel";
-import mapToCategory from "./CategoryMapper";
+import { mapToCategory } from "./CategoryMapper";
 import mapToImage from "./ImageMapper";
 
 const mapToPost = (postData: any): Post => {
