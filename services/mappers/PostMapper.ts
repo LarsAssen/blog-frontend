@@ -1,6 +1,7 @@
 import Post from "Models/PostModel";
 import { mapToCategory } from "./CategoryMapper";
 import mapToImage from "./ImageMapper";
+import { mapToPostTagList } from "./TagMapper";
 
 const mapToPost = (postData: any): Post => {
   return {
@@ -11,7 +12,7 @@ const mapToPost = (postData: any): Post => {
     image: mapToImage(postData.attributes.Image),
     description: postData.attributes.Description,
     category: mapToCategory(postData.attributes.category.data),
-    tags: postData.attributes.tags.data,
+    tags: mapToPostTagList(postData.attributes.tags.data),
     published_at: postData.attributes.publishedAt,
   } as Post;
 };

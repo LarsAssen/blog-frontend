@@ -2,7 +2,6 @@ import React from 'react'
 import PostList from '../../components/Post/PostList/PostList';
 import { fetchAPI } from 'lib/api';
 import Post from 'Models/PostModel';
-import Pagination from '@/components/Post/Pagination';
 import { getPostsPerPage } from 'services/postServices/postService';
 
 

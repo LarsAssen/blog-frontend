@@ -21,6 +21,8 @@ const PostList: React.FC<{ posts: Post[], totalPosts:number}> = ({posts, totalPo
     setCurrentPosts(previousPosts);
   }
 
+  console.log(currentPosts[0])
+
     return (
         <div className="text-gray-600 body-font overflow-hidden">
           <div className='container px-5 py-24 mx-auto'>
