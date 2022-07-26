@@ -27,8 +27,9 @@ const getTotalPostsCount = async () => {
   const response = await client.query({
     query: GET_TOTAL_POSTS_COUNT,
   });
-  const totalPostsCount = response.data.posts.meta.pagination.total;
-  return totalPostsCount;
+  const totalPostsCount: number = response.data.posts.meta.pagination.total;
+  const pageCount: number = response.data.posts.meta.pagination.pageCount;
+  return { totalPostsCount, pageCount };
 };
 
 export { getPosts, getPostsPerPage, getTotalPostsCount };

@@ -54,6 +54,7 @@ const GET_TOTAL_POSTS_COUNT = gql`
       meta {
         pagination {
           total
+          pageCount
         }
       }
     }

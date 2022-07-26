@@ -21,7 +21,7 @@ import { getPostsPerPage, getTotalPostsCount } from 'services/postServices/postS
 const Blog: React.FC<{ posts: Post[], postsCount:any, blog:any}> = ({posts, postsCount, blog}) => {
     return (
         <div>
-          <PostList posts={posts} totalPosts={postsCount} />
+          <PostList posts={posts} totalPosts={postsCount.totalPostsCount} totalPages={postsCount.pageCount} />
         </div>
     )
 }
