@@ -48,6 +48,18 @@ const GET_POSTS = gql`
   }
 `;
 
+const GET_TOTAL_POSTS_COUNT = gql`
+  query {
+    posts {
+      meta {
+        pagination {
+          total
+        }
+      }
+    }
+  }
+`;
+
 const GET_POSTS_PER_PAGE = gql`
   query ($page: Int!, $perPage: Int!) {
     posts(
@@ -94,4 +106,4 @@ const GET_POSTS_PER_PAGE = gql`
   }
 `;
 
-export { GET_POSTS, GET_POSTS_PER_PAGE };
+export { GET_POSTS, GET_POSTS_PER_PAGE, GET_TOTAL_POSTS_COUNT };

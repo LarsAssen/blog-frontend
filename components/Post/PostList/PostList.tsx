@@ -15,14 +15,17 @@ const PostList: React.FC<{ posts: Post[], totalPosts:number}> = ({posts, totalPo
     setCurrentPosts(nextPosts);
   }
 
+  const getPage = async (page:number) => {
+    setCurrentPage(page);
+    const nextPosts = await getPostsPerPage(page, postsPerPage);
+    setCurrentPosts(nextPosts);
+  }
+
   const getPreviousPage = async () => {
     setCurrentPage(currentPage - 1);
     const previousPosts = await getPostsPerPage(currentPage - 1, postsPerPage);
     setCurrentPosts(previousPosts);
   }
-
-  console.log(currentPosts[0])
-
     return (
         <div className="text-gray-600 body-font overflow-hidden">
           <div className='container px-5 py-24 mx-auto'>
@@ -32,8 +35,8 @@ const PostList: React.FC<{ posts: Post[], totalPosts:number}> = ({posts, totalPo
                 return <PostItem post={post} key={`article__${post.slug}`} />
               })}
             </div>
+            <Pagination paginateFront={getNextPage} paginateBack={getPreviousPage} totalPosts={totalPosts} currentPage={currentPage} postsPerPage={postsPerPage} />
           </div>
-          <Pagination paginateFront={getNextPage} paginateBack={getPreviousPage} totalPosts={totalPosts} currentPage={currentPage} postsPerPage={postsPerPage} />
         </div>
     )
 }
