@@ -20,7 +20,7 @@ const About: React.FC<{aboutData: any}> = ({aboutData}) => {
     return (
         <div className="container flex flex-wrap px-5 py-24 mx-auto">  
             <div className='md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200'>
-                <TitleBig titleText={aboutData.data.attributes.Title} />
+                <TitleBig variant="large" titleText={aboutData.data.attributes.Title} />
                 <p>{aboutData.data.attributes.AboutMeText}</p>
                 <TitleSmall titleText="What I do" />
                 <p>Over the last few years, I’ve gotten into ultra trail running

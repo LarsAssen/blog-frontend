@@ -48,4 +48,63 @@ const GET_POSTS = gql`
   }
 `;
 
-export { GET_POSTS };
+const GET_TOTAL_POSTS_COUNT = gql`
+  query {
+    posts {
+      meta {
+        pagination {
+          total
+          pageCount
+        }
+      }
+    }
+  }
+`;
+
+const GET_POSTS_PER_PAGE = gql`
+  query ($page: Int!, $perPage: Int!) {
+    posts(
+      pagination: { page: $page, pageSize: $perPage }
+      sort: "publishedAt:desc"
+    ) {
+      data {
+        id
+        attributes {
+          Title
+          Description
+          publishedAt
+          Content
+          Slug
+          Image {
+            data {
+              attributes {
+                url
+                alternativeText
+                name
+              }
+            }
+          }
+          category {
+            data {
+              id
+              attributes {
+                CategoryName
+                CategoryDescription
+              }
+            }
+          }
+          tags {
+            data {
+              attributes {
+                TagDescription
+                TagName
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export { GET_POSTS, GET_POSTS_PER_PAGE, GET_TOTAL_POSTS_COUNT };

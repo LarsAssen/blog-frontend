@@ -17,7 +17,7 @@ export async function getStaticProps(){
 const CurrentLifePage:React.FC<{currentLifeData:any}> = ({currentLifeData}) => {
     return (
           <div className="container px-5 py-24 mx-auto">
-            <TitleBig titleText={currentLifeData.data.attributes.Title} />
+            <TitleBig variant="large" titleText={currentLifeData.data.attributes.Title} />
             <p>{currentLifeData.data.attributes.Description}</p>
             <CurrentlyWorkingOnList />
             <div className="text-left pt-5 pb-5">

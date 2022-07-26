@@ -7,7 +7,6 @@ import CardSmall from "../../UI/CardSmall";
 import Tag from "../Tag";
 import PostCategory from "../PostCategory";
 import PostItemContent from "../PostItemContent";
-import { getStrapiMedia } from "lib/media";
 import handleTimeToRead from "services/TimeToReadService";
 import TimeRead from "@/components/TimeRead/TimeRead";
 
@@ -35,9 +34,9 @@ const PostItemSmall: React.FC<{ post: Post, variant:any, className:string }> = (
 
         </div>
         <div className="flex float-right flex-row mt-6 mb-2">
-            {post.tags.map((tag: any, index) => {
+            {post.tags.map((tag: PostTag, index) => {
               return (
-                <Tag key={index} tagName={tag.attributes.TagName} />
+                <Tag key={index} tagName={tag.name} />
               );
             })}
           </div>

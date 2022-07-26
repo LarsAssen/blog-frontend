@@ -28,9 +28,9 @@ const PostItemBig: React.FC<{ post: Post }> = ({ post }) => {
             </div>
             <div className="absolute bottom-1 right-1">
             <div className="flex float-right flex-row">
-              {post.tags.map((tag: PostTag) => {
+              {post.tags.map((tag: PostTag, index:number) => {
                 return (
-                  <Tag key={tag.id} tagName={tag.Name} />
+                  <Tag key={index} tagName={tag.name} />
                 );
               })}
             </div>

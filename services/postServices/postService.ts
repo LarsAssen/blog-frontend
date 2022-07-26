@@ -1,5 +1,9 @@
 import client from "services/apiServices/GraphQlService";
-import { GET_POSTS } from "queries/PostQueries/PostQuery";
+import {
+  GET_POSTS,
+  GET_POSTS_PER_PAGE,
+  GET_TOTAL_POSTS_COUNT,
+} from "queries/PostQueries/PostQuery";
 import { mapToPostList } from "services/mappers/PostMapper";
 
 const getPosts = async () => {
@@ -10,4 +14,22 @@ const getPosts = async () => {
   return posts;
 };
 
-export { getPosts };
+const getPostsPerPage = async (page: number, perPage: number) => {
+  const response = await client.query({
+    query: GET_POSTS_PER_PAGE,
+    variables: { page, perPage },
+  });
+  const posts = mapToPostList(response.data.posts.data);
+  return posts;
+};
+
+const getTotalPostsCount = async () => {
+  const response = await client.query({
+    query: GET_TOTAL_POSTS_COUNT,
+  });
+  const totalPostsCount: number = response.data.posts.meta.pagination.total;
+  const pageCount: number = response.data.posts.meta.pagination.pageCount;
+  return { totalPostsCount, pageCount };
+};
+
+export { getPosts, getPostsPerPage, getTotalPostsCount };

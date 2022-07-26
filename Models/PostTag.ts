@@ -1,8 +1,5 @@
 interface PostTag {
-  Name: string;
-  created_at: string;
-  id: number;
-  updated_at: string;
+  name: string;
 }
 
 export default PostTag;

@@ -33,9 +33,7 @@ const Post: React.FC<{post: any}> = ({post}) => {
           <div className="pt-6">
             <ReactMarkdown>{post.attributes.Content}</ReactMarkdown>
             <div>
-              <div>
-                <p>By Lars Assen</p>
-              </div>
+              <p>By Lars Assen</p>
             </div>
           </div>
         </div>
