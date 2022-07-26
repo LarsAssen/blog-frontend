@@ -27,7 +27,11 @@ const Home: React.FC<{ posts: Post[]; homepage: any }> = ({
       <Header />
       <div className="p-2">
         <LatestPosts posts={latestPosts} />
-        <SubscribeBox />
+        <div className="text-center justify-center">
+          <h1>Subscribe to the newsletter</h1>
+          <p>Stay up to date with all the new content and learn all about ultra running, wisdom, and life.</p>
+          <SubscribeBox />
+        </div>
       </div>
     </div>
   );

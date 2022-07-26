@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('../imgs/hero-img.webp')",
+        'hero-pattern': "url('../imgs/hero-img1.webp')",
        },
        colors: {
         'main-color': '#045F6E',
