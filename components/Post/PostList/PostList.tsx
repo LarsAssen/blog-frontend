@@ -3,11 +3,14 @@ import Post from 'Models/PostModel';
 import React from 'react';
 import Pagination from '../Pagination';
 import PostItem from '../PostItem/PostItemBig';
-import { getPostsPerPage } from 'services/postServices/postService';
+import { getPostsPerPage, getPostsPerCategory } from 'services/postServices/postService';
+import Category from 'Models/CategoryModel';
+import CategorySelect from '@/components/Filtering/CategorySelect';
 
-const PostList: React.FC<{ posts: Post[], totalPosts:number, totalPages:number}> = ({posts, totalPosts, totalPages}) => {
+const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:number, totalPages:number}> = ({posts, categories, totalPosts, totalPages}) => {
   const [currentPosts, setCurrentPosts] = React.useState(posts);
   const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentCategory, setCurrentCategory] = React.useState('');
   const [postsPerPage] = React.useState(10);
 
   const getNextPage = async () => {
@@ -30,6 +33,12 @@ const PostList: React.FC<{ posts: Post[], totalPosts:number, totalPages:number}>
     return;
     }
 
+    const PostsPerCategory = async (category:string) => {
+      const posts = await getPostsPerCategory(category);
+      setCurrentPosts(posts);
+      setCurrentCategory(category);
+    }
+
   
   const getPage = async (page:number) => {
     setCurrentPage(page);
@@ -40,6 +49,7 @@ const PostList: React.FC<{ posts: Post[], totalPosts:number, totalPages:number}>
         <div className="text-gray-600 body-font overflow-hidden">
           <div className='container px-5 py-24 mx-auto'>
             <TitleBig variant={"large"} titleText="Blog" />
+            <CategorySelect changeCategory={PostsPerCategory} categories={categories} />
             <Pagination paginateFront={getNextPage} paginateBack={getPreviousPage} totalPosts={totalPosts} currentPage={currentPage} postsPerPage={postsPerPage} />
             <div className='divide-y-2 divide-gray-100'>
               {currentPosts.map((post) => {

@@ -5,6 +5,7 @@ import {
   GET_TOTAL_POSTS_COUNT,
 } from "queries/PostQueries/PostQuery";
 import { mapToPostList } from "services/mappers/PostMapper";
+import { GET_POSTS_BY_CATEGORY } from "queries/CategoryQueries/CategoryQuery";
 
 const getPosts = async () => {
   const response = await client.query({
@@ -23,6 +24,17 @@ const getPostsPerPage = async (page: number, perPage: number) => {
   return posts;
 };
 
+const getPostsPerCategory = async (categoryName: string) => {
+  const response = await client.query({
+    query: GET_POSTS_BY_CATEGORY,
+    variables: { categoryName },
+  });
+  const posts = mapToPostList(
+    response.data.categories.data[0].attributes.posts.data
+  );
+  return posts;
+};
+
 const getTotalPostsCount = async () => {
   const response = await client.query({
     query: GET_TOTAL_POSTS_COUNT,
@@ -32,4 +44,4 @@ const getTotalPostsCount = async () => {
   return { totalPostsCount, pageCount };
 };
 
-export { getPosts, getPostsPerPage, getTotalPostsCount };
+export { getPosts, getPostsPerPage, getTotalPostsCount, getPostsPerCategory };
