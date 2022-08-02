@@ -8,6 +8,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import handleTimeToRead from "services/TimeToReadService";
 import TimeRead from "@/components/TimeRead/TimeRead";
+import SinglePostHeader from "@/components/Post/SinglePost/SinglePostHeader";
 
 const Post: React.FC<{post: any}> = ({post}) => {
     const [timeToRead, setTimeToRead] = useState(0);
@@ -20,23 +21,13 @@ const Post: React.FC<{post: any}> = ({post}) => {
 
     const imageUrl = post.attributes.Image.data.attributes.url
     return (
-      <div className="container w-full md:max-w-3xl mx-auto pt-20">
-        <div className="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
-        <div data-src={imageUrl} data-src-set={imageUrl} data-uk-img>
-        <p><Link href="/"><a className="text-base md:text-sm text-blue-500 font-bold no-underline hover:underline"><AiOutlineArrowLeft className="inline" />Back to blog</a></Link></p>
-          <h1 className="pt-4 pb-4">{post.attributes.Title}</h1>
-          <span className="text-sm md:text-base font-normal text-gray-600">Published <Moment format="MMM Do YYYY">{post.attributes.publishedAt}</Moment></span>
-          <TimeRead timeToRead={timeToRead} />
-          <img src={post.attributes.Image.data.attributes.url} alt={post.attributes.Image.data.attributes.alternativeText} />
-        </div>
-        <div>
-          <div className="pt-6">
-            <ReactMarkdown>{post.attributes.Content}</ReactMarkdown>
-            <div>
-              <p>By Lars Assen</p>
-            </div>
+      <div className="container w-full px-4 md:px-6  md:max-w-3xl mx-auto pt-20">
+        <SinglePostHeader title={post.attributes.Title} publishedAt={post.attributes.publishedAt} imageUrl={post.attributes.Image.data.attributes.url} timeToRead={timeToRead} />
+        <div className="pt-6">
+          <ReactMarkdown>{post.attributes.Content}</ReactMarkdown>
+          <div>
+            <p>By Lars Assen</p>
           </div>
-        </div>
         </div>
       </div>
     )
