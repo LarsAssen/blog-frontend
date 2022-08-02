@@ -4,6 +4,8 @@ import Header from "@/components/Header/Header";
 import SubscribeBox from "@/components/EmailSubscription/SubscribeBox";
 import { getHomePage } from "services/pageServices/pageServices";
 import { getPosts } from "services/postServices/postService";
+import Login from "@/components/Auth/Login"
+import { getSession } from "next-auth/client";
 
 export async function getStaticProps() {
   const [posts, homepage] = await Promise.all([
@@ -17,7 +19,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home: React.FC<{ posts: Post[]; homepage: any }> = ({
+const Home: React.FC<{ posts: Post[]; homepage: any}> = ({
   posts,
   homepage,
 }) => {
@@ -25,6 +27,7 @@ const Home: React.FC<{ posts: Post[]; homepage: any }> = ({
   return (
     <div>
       <Header />
+      <Login />
       <div className="p-2">
         <LatestPosts posts={latestPosts} />
         <div className="text-center justify-center">
