@@ -23,7 +23,7 @@ const PostItemBig: React.FC<{ post: Post }> = ({ post }) => {
           <div className='h-1/3 relative'>
             <div className='absolute bottom-1 left-1'>
             <Link href="/post/[slug]" as={`/post/${post.slug}`}>
-            <a className="text-main-color inline-flex items-center mt-4">Learn More</a>
+            <a className="text-main-color inline-flex items-center mt-4">Read the post</a>
             </Link>
             </div>
             <div className="absolute bottom-1 right-1">

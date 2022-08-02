@@ -28,7 +28,7 @@ const PostItemSmall: React.FC<{ post: Post, variant:any, className:string }> = (
         <PostItemContent title={post.title} description={post.description} />        
         <div className="flex items-center flex-wrap">
           <Link href="/post/[slug]" as={`/post/${post.slug}`}>
-            <a className="text-main-color inline-flex items-center md:mb-2 lg:mb-0">Read More 
+            <a aria-label={post.slug} className="text-main-color inline-flex items-center md:mb-2 lg:mb-0">Read the post
             </a>
         </Link>
 

@@ -61,6 +61,54 @@ const GET_TOTAL_POSTS_COUNT = gql`
   }
 `;
 
+const GET_POSTS_BY_CATEGORY = gql`
+  query ($categoryName: String!) {
+    posts {
+      data {
+        id
+        attributes {
+          Title
+          Description
+          publishedAt
+          Content
+          Slug
+          Image {
+            data {
+              attributes {
+                url
+                alternativeText
+                name
+              }
+            }
+          }
+          category {
+            data {
+              id
+              attributes {
+                CategoryName
+                CategoryDescription
+              }
+            }
+          }
+          tags {
+            data {
+              attributes {
+                TagDescription
+                TagName
+              }
+            }
+          }
+        }
+      }
+      meta {
+        pagination {
+          pageCount
+        }
+      }
+    }
+  }
+`;
+
 const GET_POSTS_PER_PAGE = gql`
   query ($page: Int!, $perPage: Int!) {
     posts(
@@ -107,4 +155,9 @@ const GET_POSTS_PER_PAGE = gql`
   }
 `;
 
-export { GET_POSTS, GET_POSTS_PER_PAGE, GET_TOTAL_POSTS_COUNT };
+export {
+  GET_POSTS,
+  GET_POSTS_PER_PAGE,
+  GET_TOTAL_POSTS_COUNT,
+  GET_POSTS_BY_CATEGORY,
+};

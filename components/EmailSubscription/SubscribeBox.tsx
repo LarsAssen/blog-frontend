@@ -19,28 +19,24 @@ const SubscribeBox = () => {
   }
 
   return (
-    <div className="text-center bg-gray-50">
-      <h2>Subscribe to my newsletter!</h2>
-      <p>
-        Stay up to date on all the latest posts and content by subscribing to the newsletter.
-      </p>
+    <div>
       <div>
         <input
-          className="bg-gray-200 appearance-none border-2 border-gray-200 rounded mr-4 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+          className="bg-gray-200 appearance-none border-2 font-mainFont border-gray-200 rounded mr-4 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-secondary-color"
           type="text"
           placeholder="Enter Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button
-          className="bg-main-color text-white font-bold py-2 px-4 rounded"
+      </div>
+      <button
+          className="bg-secondary-color mt-4 text-white font-bold py-2 px-4 rounded"
           type="button"
           disabled={state === "LOADING"}
           onClick={subscribe}
         >
           {state === "LOADING" ? "Loading" : "Subscribe"}
         </button>
-      </div>
       {state === "ERROR" && <p>{errorMessage}</p>}
       {state === "SUCCESS" && <p>Success!</p>}
     </div>
