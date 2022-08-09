@@ -2,10 +2,11 @@ import TitleBig from '@/components/UI/Title/TitleBig';
 import Post from 'Models/PostModel';
 import React from 'react';
 import Pagination from '../Pagination';
-import PostItem from '../PostItem/PostItemBig';
+import PostItem from '../PostItem/PostItem';
 import { getPostsPerPage, getPostsPerCategory } from 'services/postServices/postService';
 import Category from 'Models/CategoryModel';
 import CategorySelect from '@/components/Filtering/CategorySelect';
+import Size from 'Models/Enums/Size';
 
 const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:number, totalPages:number}> = ({posts, categories, totalPosts, totalPages}) => {
   const [currentPosts, setCurrentPosts] = React.useState(posts);
@@ -51,9 +52,9 @@ const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:numb
             <TitleBig variant={"large"} titleText="Blog" />
             <CategorySelect changeCategory={PostsPerCategory} categories={categories} />
             <Pagination paginateFront={getNextPage} paginateBack={getPreviousPage} totalPosts={totalPosts} currentPage={currentPage} postsPerPage={postsPerPage} />
-            <div className='divide-y-2 divide-gray-100'>
+            <div className='flex flex-auto flex-wrap mt-5 -m-4 list'>
               {currentPosts.map((post) => {
-                return <PostItem post={post} key={`article__${post.slug}`} />
+                return <PostItem variant={""} className="item md:w-1/3" size={Size.Medium} post={post} key={`article__${post.slug}`} />
               })}
             </div>
             <Pagination paginateFront={getNextPage} paginateBack={getPreviousPage} totalPosts={totalPosts} currentPage={currentPage} postsPerPage={postsPerPage} />
