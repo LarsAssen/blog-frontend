@@ -8,7 +8,6 @@ const Login = () => {
     const { data: session } = useSession()
 
     const signInButtonNode = () => {
-        console.log(session)
         if (session) {
           return false;
         }

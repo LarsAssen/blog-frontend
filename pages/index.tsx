@@ -5,7 +5,6 @@ import SubscribeBox from "@/components/EmailSubscription/SubscribeBox";
 import { getHomePage } from "services/pageServices/pageServices";
 import { getPosts } from "services/postServices/postService";
 import Login from "@/components/Auth/Login"
-import { getSession } from "next-auth/client";
 
 export async function getStaticProps() {
   const [posts, homepage] = await Promise.all([

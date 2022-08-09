@@ -1,5 +1,5 @@
 import PostTag from "Models/PostTag";
-import { Category } from "./CategoryModel";
+import Category from "./CategoryModel";
 import ImageType from "./ImageTypeModel";
 
 interface Post {

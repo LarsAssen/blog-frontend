@@ -1,10 +1,8 @@
-import Post from "Models/PostModel";
-
-export type Category = {
+interface Category {
   id: number;
   name: string;
   description: string;
   slug: string;
-};
+}
 
 export default Category;
