@@ -3,7 +3,7 @@ import CurrentlyWorkingOnItem from './CurrentlyWorkingOnItem'
 
 const CurrentlyWorkingOnList = () => {
 
-  const currentlyWorkingOnItems = ["Training for the Mozart Ultra 75k", "Planning my wedding in September this year with my fiancee.", "My current job at Arcady.", "Making this blog more beautiful."]
+  const currentlyWorkingOnItems = ["Training for the Tarawera 100k", "Planning my wedding in September this year with my fiancee.", "Getting ready to travel to New Zealand.", "Making this blog more beautiful."]
   const prioritiesItems = ["Staying in great shape by working out and running", "Planning a wedding", "Getting my daily habits done", "Spending time with my family and friends"]
 
   return (

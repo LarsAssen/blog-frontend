@@ -1,13 +1,7 @@
 import ReactMarkdown from "react-markdown";
-import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
-import { getStrapiMedia } from "../../lib/media";
-import Link from 'next/link';
-import qs from 'qs';
-import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import handleTimeToRead from "services/TimeToReadService";
-import TimeRead from "@/components/TimeRead/TimeRead";
 import SinglePostHeader from "@/components/Post/SinglePost/SinglePostHeader";
 
 const Post: React.FC<{post: any}> = ({post}) => {
