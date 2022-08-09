@@ -14,7 +14,7 @@ const Pagination:React.FC<{postsPerPage:number, totalPosts:number, paginateFront
       <div>
         <p className='text-sm text-gray-700'>
           Showing 
-          <span className='font-medium'> {currentPage * postsPerPage - 9} </span>
+          <span className='font-medium'> {currentPage * postsPerPage - 11} </span>
           to 
           <span className='font-medium'> {currentPage * postsPerPage} </span>
           of 

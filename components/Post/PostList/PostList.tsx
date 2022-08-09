@@ -12,7 +12,7 @@ const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:numb
   const [currentPosts, setCurrentPosts] = React.useState(posts);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [currentCategory, setCurrentCategory] = React.useState('');
-  const [postsPerPage] = React.useState(10);
+  const [postsPerPage] = React.useState(12);
 
   const getNextPage = async () => {
     if (currentPage < totalPages) {
