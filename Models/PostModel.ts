@@ -12,6 +12,7 @@ interface Post {
   category: Category;
   tags: PostTag[];
   published_at: any;
+  rating: number | null;
 }
 
 export default Post;

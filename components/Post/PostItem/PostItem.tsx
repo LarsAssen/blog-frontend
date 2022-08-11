@@ -11,6 +11,7 @@ import Link from 'next/link';
 import Tag from '../Tag';
 import PostTag from 'Models/PostTag';
 import Title from '@/components/UI/Title/Title';
+import Rating from '../PostRating/Rating';
 
 const PostItem: React.FC<{ post: Post, size:Size, className:string, variant: any }> = ({ post, size, className, variant }) => {
 
@@ -22,6 +23,7 @@ const PostItem: React.FC<{ post: Post, size:Size, className:string, variant: any
     setTimeToRead(time)
   }, [post.content]);
 
+
   if(size === Size.Medium) {
     return (
       <Card className={className} size={size} variant={variant}>
@@ -29,7 +31,8 @@ const PostItem: React.FC<{ post: Post, size:Size, className:string, variant: any
           <div className="p-6">
           <PostCategory categoryName={post.category.name} />
           <TimeRead timeToRead={timeToRead} />
-          <PostItemContent title={post.title} description={post.description} />        
+          <Rating rating={post.rating} />
+          <PostItemContent title={post.title} description={post.description} />    
           <div className="flex items-center flex-wrap">
             <Link href="/post/[slug]" as={`/post/${post.slug}`}>
               <a aria-label={post.slug} className="text-main-color inline-flex items-center md:mb-2 lg:mb-0">Read the post

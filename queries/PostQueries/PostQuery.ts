@@ -37,6 +37,11 @@ const GET_POSTS = gql`
               }
             }
           }
+          Rating {
+            ... on ComponentRatingRating {
+              Rating
+            }
+          }
         }
       }
       meta {
