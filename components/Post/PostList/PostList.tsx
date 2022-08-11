@@ -1,4 +1,4 @@
-import TitleBig from '@/components/UI/Title/TitleBig';
+import Title from '@/components/UI/Title/Title';
 import Post from 'Models/PostModel';
 import React from 'react';
 import Pagination from '../Pagination';
@@ -49,7 +49,7 @@ const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:numb
     return (
         <div className="text-gray-600 body-font overflow-hidden">
           <div className='container px-5 py-24 mx-auto'>
-            <TitleBig variant={"large"} titleText="Blog" />
+            <Title size={Size.Large} text="Blog" />
             <CategorySelect changeCategory={PostsPerCategory} categories={categories} />
             <Pagination paginateFront={getNextPage} paginateBack={getPreviousPage} totalPosts={totalPosts} currentPage={currentPage} postsPerPage={postsPerPage} />
             <div className='flex flex-auto flex-wrap mt-5 -m-4 list'>

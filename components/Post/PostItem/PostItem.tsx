@@ -10,7 +10,7 @@ import PostItemContent from '../PostItemContent';
 import Link from 'next/link';
 import Tag from '../Tag';
 import PostTag from 'Models/PostTag';
-import TitleSmall from '@/components/UI/Title/TitleSmall';
+import Title from '@/components/UI/Title/Title';
 
 const PostItem: React.FC<{ post: Post, size:Size, className:string, variant: any }> = ({ post, size, className, variant }) => {
 
@@ -58,7 +58,7 @@ const PostItem: React.FC<{ post: Post, size:Size, className:string, variant: any
           <div className='mb-2'>
             <PostCategory categoryName={post.category.name} />
           </div>
-          <TitleSmall titleText={post.title} />
+          <Title size={Size.Medium} text={post.title} />
           <p className="leading-relaxed">{post.description}</p>
           <div className='h-1/3 relative'>
             <div className='absolute bottom-1 left-1'>
