@@ -17,7 +17,7 @@ const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:numb
   const getNextPage = async () => {
     if (currentPage < totalPages) {
       const nextPage = currentPage + 1;
-      const nextPosts = await getPostsPerPage(nextPage, postsPerPage);
+      const nextPosts = await getPostsPerPage(nextPage, postsPerPage, currentCategory);
       setCurrentPosts(nextPosts);
       setCurrentPage(nextPage);
     }
@@ -27,7 +27,7 @@ const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:numb
   const getPreviousPage = async () => {
     if (currentPage > 1) {
       const previousPage = currentPage - 1;
-      const previousPosts = await getPostsPerPage(previousPage, postsPerPage);
+      const previousPosts = await getPostsPerPage(previousPage, postsPerPage, currentCategory);
       setCurrentPosts(previousPosts);
       setCurrentPage(previousPage);
     }
@@ -43,7 +43,7 @@ const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:numb
   
   const getPage = async (page:number) => {
     setCurrentPage(page);
-    const nextPosts = await getPostsPerPage(page, postsPerPage);
+    const nextPosts = await getPostsPerPage(page, postsPerPage, currentCategory);
     setCurrentPosts(nextPosts);
   }
     return (

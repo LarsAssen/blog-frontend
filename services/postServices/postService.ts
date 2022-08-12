@@ -15,12 +15,19 @@ const getPosts = async () => {
   return posts;
 };
 
-const getPostsPerPage = async (page: number, perPage: number) => {
+const getPostsPerPage = async (
+  page: number,
+  perPage: number,
+  category: string | undefined
+) => {
   const response = await client.query({
     query: GET_POSTS_PER_PAGE,
     variables: { page, perPage },
   });
   const posts = mapToPostList(response.data.posts.data);
+  if (category) {
+    return posts.filter((post) => post.category.name === category);
+  }
   return posts;
 };
 
