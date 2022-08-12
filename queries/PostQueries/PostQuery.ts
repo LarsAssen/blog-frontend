@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 const GET_POSTS = gql`
   query {
-    posts(sort: "publishedAt:desc") {
+    posts(sort: "publishedAt:desc", pagination: { limit: 300 }) {
       data {
         id
         attributes {

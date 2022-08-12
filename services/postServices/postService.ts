@@ -11,6 +11,7 @@ const getPosts = async () => {
   const response = await client.query({
     query: GET_POSTS,
   });
+  console.log;
   const posts = mapToPostList(response.data.posts.data);
   return posts;
 };
@@ -48,6 +49,7 @@ const getTotalPostsCount = async () => {
   });
   const totalPostsCount: number = response.data.posts.meta.pagination.total;
   const pageCount: number = response.data.posts.meta.pagination.pageCount;
+  console.log("prosto");
   return { totalPostsCount, pageCount };
 };
 

@@ -8,15 +8,22 @@ const Pagination:React.FC<{postsPerPage:number, totalPosts:number, paginateFront
     paginateBack,
     currentPage,}) => {
 
+    var fromNumber = (currentPage - 1) * postsPerPage + 1;
+    var toNumber = currentPage * postsPerPage;
+
+    if(toNumber > totalPosts) {
+        toNumber = totalPosts;
+    }
+
       
     return (
 <div className='py-2'>
       <div>
         <p className='text-sm text-gray-700'>
           Showing 
-          <span className='font-medium'> {currentPage * postsPerPage - 11} </span>
+          <span className='font-medium'> {fromNumber} </span>
           to 
-          <span className='font-medium'> {currentPage * postsPerPage} </span>
+          <span className='font-medium'> {toNumber} </span>
           of 
           <span className='font-medium'> {totalPosts} </span>
           results
