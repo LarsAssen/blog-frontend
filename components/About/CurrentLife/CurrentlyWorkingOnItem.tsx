@@ -1,13 +1,14 @@
-import TitleSmall from '@/components/UI/Title/TitleSmall'
+import Title from '@/components/UI/Title/Title'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBolt } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
+import Size from 'Models/Enums/Size'
 
 const CurrentlyWorkingOnItem:React.FC<{title:string, description:string, items: string[]}> = ({title, description, items}) => {
   return (
     <div className="border rounded-xl shadow-xl md:w-2/5">
     <div className="p-6 rounded-lg">
-      <TitleSmall titleText={title} />
+      <Title size={Size.Medium} text={title} />
       <p>{description}</p>
       <ul>
         {items.map(item => {

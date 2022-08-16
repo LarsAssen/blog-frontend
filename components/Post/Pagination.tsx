@@ -1,4 +1,6 @@
 import React from 'react'
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Pagination:React.FC<{postsPerPage:number, totalPosts:number, paginateFront:Function, paginateBack:Function, currentPage:number}> = ({  postsPerPage,
     totalPosts,
@@ -6,15 +8,22 @@ const Pagination:React.FC<{postsPerPage:number, totalPosts:number, paginateFront
     paginateBack,
     currentPage,}) => {
 
+    var fromNumber = (currentPage - 1) * postsPerPage + 1;
+    var toNumber = currentPage * postsPerPage;
+
+    if(toNumber > totalPosts) {
+        toNumber = totalPosts;
+    }
+
       
     return (
 <div className='py-2'>
       <div>
         <p className='text-sm text-gray-700'>
           Showing 
-          <span className='font-medium'> {currentPage * postsPerPage - 3} </span>
+          <span className='font-medium'> {fromNumber} </span>
           to 
-          <span className='font-medium'> {currentPage * postsPerPage} </span>
+          <span className='font-medium'> {toNumber} </span>
           of 
           <span className='font-medium'> {totalPosts} </span>
           results
@@ -31,9 +40,9 @@ const Pagination:React.FC<{postsPerPage:number, totalPosts:number, paginateFront
               paginateBack();
             }}
             href='#'
-            className='relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+            className='relative inline-flex items-center px-2 py-2 rounded-l-md border bg-white text-sm font-medium hover:bg-gray-50'
           >
-            <span>Previous</span>
+            <FontAwesomeIcon className="text-main-color text-2xl" icon={faAngleLeft} />
           </a>
 
           <a
@@ -41,9 +50,9 @@ const Pagination:React.FC<{postsPerPage:number, totalPosts:number, paginateFront
               paginateFront();
             }}
             href='#'
-            className='relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+            className='relative inline-flex items-center px-2 py-2 rounded-r-md border bg-white text-sm font-medium hover:bg-gray-50'
           >
-            <span>Next</span>
+            <FontAwesomeIcon className="text-main-color text-2xl" icon={faAngleRight} />
           </a>
         </nav>
       </div>

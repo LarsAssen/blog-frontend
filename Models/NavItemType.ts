@@ -1,6 +1,6 @@
-type NavItemType = {
-    title:string,
-    link:string
+interface NavItemType {
+  title: string;
+  link: string;
 }
 
 export default NavItemType;

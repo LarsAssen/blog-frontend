@@ -1,24 +1,23 @@
-import { fetchAPI } from "lib/api";
-import { Post } from "Models/PostModel";
+import Post from "Models/PostModel";
 import LatestPosts from "@/components/Post/LatestPosts/LatestPosts";
-import qs from "qs";
 import Header from "@/components/Header/Header";
 import SubscribeBox from "@/components/EmailSubscription/SubscribeBox";
+import { getHomePage } from "services/pageServices/pageServices";
+import { getPosts } from "services/postServices/postService";
 
 export async function getStaticProps() {
-  const [postsData, homepage] = await Promise.all([
-    fetchAPI(`/posts`),
-    fetchAPI("/homepage"),
+  const [posts, homepage] = await Promise.all([
+    getPosts(),
+    getHomePage(),
   ]);
-  var posts = postsData.data as any[];
+
   return {
-    
     props: { posts, homepage },
     revalidate: 10,
   };
 }
 
-const Home: React.FC<{ posts: any; homepage: any }> = ({
+const Home: React.FC<{ posts: Post[]; homepage: any}> = ({
   posts,
   homepage,
 }) => {
@@ -28,7 +27,11 @@ const Home: React.FC<{ posts: any; homepage: any }> = ({
       <Header />
       <div className="p-2">
         <LatestPosts posts={latestPosts} />
-        <SubscribeBox />
+        <div className="text-center justify-center">
+          <h1>Subscribe to the newsletter</h1>
+          <p>Stay up to date with all the new content and learn all about ultra running, wisdom, and life.</p>
+          <SubscribeBox />
+        </div>
       </div>
     </div>
   );

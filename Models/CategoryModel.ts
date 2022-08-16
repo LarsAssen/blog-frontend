@@ -1,7 +1,8 @@
-import { Post } from "./PostModel";
-
-export type Category ={
-    name:string,
-    articles:Post[],
-    slug: string
+interface Category {
+  id: number;
+  name: string;
+  description: string;
+  slug: string;
 }
+
+export default Category;

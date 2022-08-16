@@ -1,28 +1,31 @@
 import React from 'react'
 import PostList from '../../components/Post/PostList/PostList';
 import { fetchAPI } from 'lib/api';
-import { Post } from 'Models/PostModel';
+import Post from 'Models/PostModel';
+import { getPostsPerPage, getTotalPostsCount } from 'services/postServices/postService';
+import CategorySelect from '@/components/Filtering/CategorySelect';
+import { GetCategories } from 'services/categoryServices/categoryService';
+import Category from 'Models/CategoryModel';
 
 
   export async function getStaticProps(){
-    const [postsData, blog] = await Promise.all([
-      fetchAPI("/posts"),
+    const [posts, categories, postsCount,  blog] = await Promise.all([
+      getPostsPerPage(1, 12),
+      GetCategories(),
+      getTotalPostsCount(),
       fetchAPI("/blog-page"),
     ])
 
-    const posts = postsData.data as any[]
-
     return {
-      props: {posts, blog},
+      props: {posts, categories, postsCount, blog},
       revalidate: 10,
     };
   }
 
-const Blog: React.FC<{ posts: any[], blog:any}> = ({posts, blog}) => {
-
+const Blog: React.FC<{ posts: Post[], categories:Category[], postsCount:any, blog:any}> = ({posts, categories, postsCount, blog}) => {
     return (
         <div>
-          <PostList posts={posts} />
+          <PostList categories={categories} posts={posts} totalPosts={postsCount.totalPostsCount} />
         </div>
     )
 }
