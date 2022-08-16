@@ -10,7 +10,7 @@ import Category from 'Models/CategoryModel';
 
   export async function getStaticProps(){
     const [posts, categories, postsCount,  blog] = await Promise.all([
-      getPostsPerPage(1, 12, ''),
+      getPostsPerPage(1, 12),
       GetCategories(),
       getTotalPostsCount(),
       fetchAPI("/blog-page"),
