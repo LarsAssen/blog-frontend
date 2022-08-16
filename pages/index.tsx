@@ -17,7 +17,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home: React.FC<{ posts: Post[]; homepage: any }> = ({
+const Home: React.FC<{ posts: Post[]; homepage: any}> = ({
   posts,
   homepage,
 }) => {

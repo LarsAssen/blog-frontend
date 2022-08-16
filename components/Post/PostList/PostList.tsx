@@ -1,17 +1,18 @@
-import TitleBig from '@/components/UI/Title/TitleBig';
+import Title from '@/components/UI/Title/Title';
 import Post from 'Models/PostModel';
 import React from 'react';
 import Pagination from '../Pagination';
-import PostItem from '../PostItem/PostItemBig';
-import { getPostsPerPage, getPostsPerCategory } from 'services/postServices/postService';
+import PostItem from '../PostItem/PostItem';
+import { getPostsPerPage } from 'services/postServices/postService';
 import Category from 'Models/CategoryModel';
-import CategorySelect from '@/components/Filtering/CategorySelect';
+import Size from 'Models/Enums/Size';
 
-const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:number, totalPages:number}> = ({posts, categories, totalPosts, totalPages}) => {
+const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:number}> = ({posts, categories, totalPosts}) => {
   const [currentPosts, setCurrentPosts] = React.useState(posts);
   const [currentPage, setCurrentPage] = React.useState(1);
-  const [currentCategory, setCurrentCategory] = React.useState('');
-  const [postsPerPage] = React.useState(10);
+  const [postsPerPage] = React.useState(12);
+  const [totalPages] = React.useState(Math.ceil(totalPosts / postsPerPage));
+
 
   const getNextPage = async () => {
     if (currentPage < totalPages) {
@@ -32,13 +33,6 @@ const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:numb
     }
     return;
     }
-
-    const PostsPerCategory = async (category:string) => {
-      const posts = await getPostsPerCategory(category);
-      setCurrentPosts(posts);
-      setCurrentCategory(category);
-    }
-
   
   const getPage = async (page:number) => {
     setCurrentPage(page);
@@ -48,12 +42,11 @@ const PostList: React.FC<{ posts: Post[], categories:Category[], totalPosts:numb
     return (
         <div className="text-gray-600 body-font overflow-hidden">
           <div className='container px-5 py-24 mx-auto'>
-            <TitleBig variant={"large"} titleText="Blog" />
-            <CategorySelect changeCategory={PostsPerCategory} categories={categories} />
+            <Title size={Size.Large} text="Blog" />
             <Pagination paginateFront={getNextPage} paginateBack={getPreviousPage} totalPosts={totalPosts} currentPage={currentPage} postsPerPage={postsPerPage} />
-            <div className='divide-y-2 divide-gray-100'>
+            <div className='flex flex-auto flex-wrap mt-5 -m-4 list'>
               {currentPosts.map((post) => {
-                return <PostItem post={post} key={`article__${post.slug}`} />
+                return <PostItem variant={""} className="item md:w-1/3" size={Size.Medium} post={post} key={`article__${post.slug}`} />
               })}
             </div>
             <Pagination paginateFront={getNextPage} paginateBack={getPreviousPage} totalPosts={totalPosts} currentPage={currentPage} postsPerPage={postsPerPage} />

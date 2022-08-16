@@ -10,7 +10,7 @@ import Category from 'Models/CategoryModel';
 
   export async function getStaticProps(){
     const [posts, categories, postsCount,  blog] = await Promise.all([
-      getPostsPerPage(1, 10),
+      getPostsPerPage(1, 12),
       GetCategories(),
       getTotalPostsCount(),
       fetchAPI("/blog-page"),
@@ -25,7 +25,7 @@ import Category from 'Models/CategoryModel';
 const Blog: React.FC<{ posts: Post[], categories:Category[], postsCount:any, blog:any}> = ({posts, categories, postsCount, blog}) => {
     return (
         <div>
-          <PostList categories={categories} posts={posts} totalPosts={postsCount.totalPostsCount} totalPages={postsCount.pageCount} />
+          <PostList categories={categories} posts={posts} totalPosts={postsCount.totalPostsCount} />
         </div>
     )
 }

@@ -4,6 +4,11 @@ import mapToImage from "./ImageMapper";
 import { mapToPostTagList } from "./TagMapper";
 
 const mapToPost = (postData: any): Post => {
+  const ratingJson = postData.attributes.Rating
+    ? postData.attributes.Rating[0]
+    : null;
+  const trueRating = ratingJson ? ratingJson.Rating : null;
+
   return {
     id: postData.id,
     title: postData.attributes.Title,
@@ -14,6 +19,7 @@ const mapToPost = (postData: any): Post => {
     category: mapToCategory(postData.attributes.category.data),
     tags: mapToPostTagList(postData.attributes.tags.data),
     published_at: postData.attributes.publishedAt,
+    rating: trueRating,
   } as Post;
 };
 

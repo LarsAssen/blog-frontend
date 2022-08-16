@@ -22,7 +22,7 @@ const GET_POSTS_BY_CATEGORY = gql`
         attributes {
           CategoryName
           CategoryDescription
-          posts(sort: "publishedAt:desc") {
+          posts(sort: "publishedAt:desc", pagination: { limit: 300 }) {
             data {
               id
               attributes {
@@ -66,4 +66,20 @@ const GET_POSTS_BY_CATEGORY = gql`
   }
 `;
 
-export { GET_CATEGORIES, GET_POSTS_BY_CATEGORY };
+const GET_POST_COUNT_BY_CATEGORY = gql`
+  query ($categoryName: String!) {
+    categories(filters: { CategoryName: { containsi: $categoryName } }) {
+      data {
+        attributes {
+          posts(pagination: { limit: 300 }) {
+            data {
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export { GET_CATEGORIES, GET_POSTS_BY_CATEGORY, GET_POST_COUNT_BY_CATEGORY };
