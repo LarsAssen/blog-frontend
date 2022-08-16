@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../navagation/NavBar';
+import NavBar from '../navigation/NavBar';
 import Meta from '../Meta/Meta';
 import Footer from '../Footer/Footer';
 const Layout: React.FC = ({children}) => {
