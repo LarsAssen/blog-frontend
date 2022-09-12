@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     "components/Header"
-, "components/UI/Button/Button.stories.ts"  ],
+, "components/UI/Button/Button.stories.ts", "pages/_document.js"  ],
   "exclude": [
     "node_modules"
   ]
