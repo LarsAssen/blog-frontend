@@ -12,9 +12,9 @@ const Rating:React.FC<{rating: number | null}> = ({rating}) => {
     }
 
   return (
-    <div>
+    <span className='ml-3'>
         {stars}
-    </div>
+    </span>
   )
 }
 

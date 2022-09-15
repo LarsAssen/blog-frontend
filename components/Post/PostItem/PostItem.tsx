@@ -30,8 +30,8 @@ const PostItem: React.FC<{ post: Post, size:Size, className:string, variant: any
         <Image width={1200} height={900} className="lg:h-48 md:h-36 w-full object-cover object-center" src={post.image.url} alt={post.image.alternativeText} />
           <div className="p-6">
           <PostCategory categoryName={post.category.name} />
-          <TimeRead timeToRead={timeToRead} />
           <Rating rating={post.rating} />
+          <TimeRead timeToRead={timeToRead} />
           <PostItemContent title={post.title} description={post.description} />    
           <div className="flex items-center flex-wrap">
             <Link href="/post/[slug]" as={`/post/${post.slug}`}>
