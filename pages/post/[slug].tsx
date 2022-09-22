@@ -7,7 +7,6 @@ import SinglePostHeader from "@/components/Post/SinglePost/SinglePostHeader";
 const Post: React.FC<{post: any}> = ({post}) => {
     const [timeToRead, setTimeToRead] = useState(0);
 
-
     useEffect(() => {
       const time =  handleTimeToRead(post.attributes.Content)
       setTimeToRead(time)
@@ -15,6 +14,7 @@ const Post: React.FC<{post: any}> = ({post}) => {
 
     const imageUrl = post.attributes.Image.data.attributes.url
     return (
+      <>
       <div className="container w-full px-4 md:px-6  md:max-w-3xl mx-auto pt-20">
         <SinglePostHeader title={post.attributes.Title} publishedAt={post.attributes.publishedAt} imageUrl={post.attributes.Image.data.attributes.url} timeToRead={timeToRead} />
         <div className="pt-6">
@@ -24,6 +24,7 @@ const Post: React.FC<{post: any}> = ({post}) => {
           </div>
         </div>
       </div>
+      </>
     )
 }
 
