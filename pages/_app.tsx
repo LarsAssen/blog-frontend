@@ -9,8 +9,11 @@ import { useRouter } from 'next/dist/client/router';
 import { AnimatePresence, domAnimation, LazyMotion, m } from 'framer-motion';
 export const GlobalContext = createContext({});
 
+interface CustomPageProps {
+  global: any;
+}
 
-function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
+function MyApp({ Component, pageProps: {...pageProps} }: AppProps<CustomPageProps>) {
   const {global} = pageProps;
 
   const router = useRouter();
