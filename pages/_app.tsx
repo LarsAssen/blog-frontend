@@ -7,11 +7,13 @@ import {fetchAPI} from "../lib/api";
 import Layout from '@/components/Layout/Layout';
 import { useRouter } from 'next/dist/client/router';
 import { AnimatePresence, domAnimation, LazyMotion, m } from 'framer-motion';
-import { SessionProvider } from "next-auth/react"
 export const GlobalContext = createContext({});
 
+interface CustomPageProps {
+  global: any;
+}
 
-function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
+function MyApp({ Component, pageProps: {...pageProps} }: AppProps<CustomPageProps>) {
   const {global} = pageProps;
 
   const router = useRouter();
@@ -43,7 +45,6 @@ function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
     <link rel="shortcut icon" href={global.data.attributes.Favicon.data.attributes.url} />
     
   </Head>
-  <SessionProvider session={session}>
   <GlobalContext.Provider value={global}>
       <Layout>
       <LazyMotion features={domAnimation}>
@@ -63,7 +64,6 @@ function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
       </LazyMotion>
       </Layout>
   </GlobalContext.Provider>
-  </SessionProvider>
   </> 
 )}
 
