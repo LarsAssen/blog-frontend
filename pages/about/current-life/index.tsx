@@ -16,8 +16,8 @@ export async function getStaticProps(){
   }
 
 const CurrentLifePage:React.FC<{currentLifeData:any}> = ({currentLifeData}) => {
-  const workingOn = currentLifeData.data.attributes.WorkingOnText.split(',')
-  const priorities = currentLifeData.data.attributes.PrioritiesList.split(',')
+  const workingOn:string[] = currentLifeData.data.attributes.WorkingOnText.toString().split(',')
+  const priorities:string[] = currentLifeData.data.attributes.PrioritiesList.toString().split(',')
 
     return (
           <div className="container px-5 py-24 mx-auto">
