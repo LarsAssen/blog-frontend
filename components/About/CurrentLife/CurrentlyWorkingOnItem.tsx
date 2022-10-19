@@ -12,7 +12,7 @@ const CurrentlyWorkingOnItem:React.FC<{title:string, description:string, items: 
       <p>{description}</p>
       <ul>
         {items.map(item => {
-          item = item.replaceAll('"', '');
+          item = item.toString().replace('/"/g', '');
           return (
           <p key={item}>
           <FontAwesomeIcon className='text-main-color' icon={faBolt} />
