@@ -3,22 +3,23 @@ import { fetchAPI } from "../../lib/api";
 import { useEffect, useState } from "react";
 import handleTimeToRead from "services/TimeToReadService";
 import SinglePostHeader from "@/components/Post/SinglePost/SinglePostHeader";
+import Post from "Models/PostModel";
 
-const Post: React.FC<{post: any}> = ({post}) => {
+const Post: React.FC<{post: Post}> = ({post}) => {
     const [timeToRead, setTimeToRead] = useState(0);
 
 
     useEffect(() => {
-      const time =  handleTimeToRead(post.attributes.Content)
+      const time =  handleTimeToRead(post.content)
       setTimeToRead(time)
-    }, [post.attributes.Content]);
+    }, [post.content]);
 
-    const imageUrl = post.attributes.Image.data.attributes.url
+    const imageUrl = post.image.url;
     return (
       <div className="container w-full px-4 md:px-6  md:max-w-3xl mx-auto pt-20">
-        <SinglePostHeader title={post.attributes.Title} publishedAt={post.attributes.publishedAt} imageUrl={post.attributes.Image.data.attributes.url} timeToRead={timeToRead} rating={5} />
+        <SinglePostHeader title={post.title} publishedAt={post.published_at} imageUrl={imageUrl} timeToRead={timeToRead} rating={post.rating} />
         <div className="pt-6">
-          <ReactMarkdown>{post.attributes.Content}</ReactMarkdown>
+          <ReactMarkdown>{post.content}</ReactMarkdown>
           <div>
             <p>By Lars Assen</p>
           </div>

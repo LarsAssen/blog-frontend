@@ -5,7 +5,7 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import Moment from 'react-moment'
 import Rating from '../PostRating/Rating'
 
-const SinglePostHeader:React.FC<{imageUrl: string, timeToRead: number, title: string, publishedAt: string, rating: number }> = ({imageUrl, timeToRead, title, publishedAt, rating}) => {
+const SinglePostHeader:React.FC<{imageUrl: string, timeToRead: number, title: string, publishedAt: string, rating: number|null }> = ({imageUrl, timeToRead, title, publishedAt, rating}) => {
   return (
       <div className="w-full text-xl text-gray-800 leading-normal">
         <p><Link href="/"><a className="text-base md:text-sm text-secondary-color font-bold no-underline hover:underline"><AiOutlineArrowLeft className="inline" />Back to blog</a></Link></p>
